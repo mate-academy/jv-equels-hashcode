@@ -35,7 +35,7 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        return Objects.hash(width, length);
+        return Objects.hash(width, length, color);
     }
 
     public Integer getWidth() {
