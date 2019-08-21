@@ -39,8 +39,8 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) o;
-        return this.width.equals(rectangle.width) && this.length.equals(rectangle.length);
-
+        return this.width.equals(rectangle.width) && this.length.equals(rectangle.length)
+                && this.color.equals(rectangle.color);
     }
 
     @Override
