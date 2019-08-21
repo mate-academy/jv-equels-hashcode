@@ -32,6 +32,9 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
         if (obj instanceof Rectangle) {
             return ((Rectangle) obj).getColor().equals(this.color)
                     && ((Rectangle) obj).getLength().equals(this.length)
@@ -42,7 +45,7 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.color,this.length,this.width);
+        return Objects.hash(this.color, this.length, this.width);
     }
 
 
