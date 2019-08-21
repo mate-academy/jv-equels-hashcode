@@ -31,9 +31,9 @@ public class Rectangle {
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof Rectangle) {
-            return ((Rectangle) obj).getColor() == this.color
-                    && ((Rectangle) obj).getLength() == this.length
-                    && ((Rectangle) obj).getWidth() == this.width;
+            return ((Rectangle) obj).getColor().equals(this.color)
+                    && ((Rectangle) obj).getLength().equals(this.length)
+                    && ((Rectangle) obj).getWidth().equals(this.width);
         }
         return false;
     }
