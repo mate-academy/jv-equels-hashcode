@@ -1,30 +1,49 @@
 package core.basesyntax;
 
+import java.util.Objects;
+
 /**
  * Дан класс Rectangle. Переопределите в нем методы equals() и hashCode() так, чтобы equals()
  * сравнивал экземпляры Rectangle по содержимому полей a и b, а hashCode() был бы согласованным с
  * реализацией equals().
  */
 public class Rectangle {
-    private Integer a;
-    private Integer b;
+    private Integer width;
+    private Integer length;
     private String color;
 
-    public Rectangle(Integer a, Integer b, String color) {
-        this.a = a;
-        this.b = b;
+    public Rectangle(Integer width, Integer length, String color) {
+        this.width = width;
+        this.length = length;
         this.color = color;
     }
 
-    public Integer getA() {
-        return a;
+    public Integer getWidth() {
+        return width;
     }
 
-    public Integer getB() {
-        return b;
+    public Integer getLength() {
+        return length;
     }
 
     public String getColor() {
         return color;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Rectangle rectangle = (Rectangle) o;
+        return Objects.equals(width, rectangle.width) && Objects.equals(length, rectangle.length);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(width, length);
     }
 }
