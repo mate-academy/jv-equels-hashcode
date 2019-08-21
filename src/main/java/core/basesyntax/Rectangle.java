@@ -35,6 +35,7 @@ public class Rectangle {
                     && ((Rectangle) obj).getLength() == this.length
                     && ((Rectangle) obj).getWidth() == this.width;
         }
+        return false;
     }
 
     @Override
