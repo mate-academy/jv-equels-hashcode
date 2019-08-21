@@ -32,23 +32,21 @@ class Rectangle {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object o) {
+        if (this == o) {
             return true;
         }
-        {
-            if (obj == null || getClass() != obj.getClass()) {
-                return false;
-            }
-            Rectangle rectangle = (Rectangle) obj;
-            return Objects.equals(getWidth(), rectangle.getWidth())
-                    && Objects.equals(getLength(), rectangle.getLength());
+        if (o == null || getClass() != o.getClass()) {
+            return false;
         }
+        Rectangle rectangle = (Rectangle) o;
+        return Objects.equals(getWidth(), rectangle.getWidth())
+                && Objects.equals(getLength(), rectangle.getLength())
+                && Objects.equals(getColor(), rectangle.getColor());
     }
-
 
     @Override
     public int hashCode() {
-        return Objects.hash(getWidth(), getLength());
+        return Objects.hash(getWidth(), getLength(), getColor());
     }
 }
