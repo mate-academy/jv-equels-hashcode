@@ -39,11 +39,12 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) o;
-        return Objects.equals(width, rectangle.width) && Objects.equals(length, rectangle.length);
+        return this.width.equals(rectangle.width) && this.length.equals(rectangle.length);
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(width, length);
+        return 69 * width + 4 + length;
     }
 }
