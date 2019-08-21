@@ -20,7 +20,15 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object obj) {
-        return this.width.equals(width) && this.length.equals(length);
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof Rectangle) {
+            return this.width.equals(width) && this.length.equals(length);
+        } else {
+            return false;
+        }
+
     }
 
     @Override
