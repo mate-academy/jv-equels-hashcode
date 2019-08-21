@@ -29,19 +29,15 @@ public class Rectangle {
     }
 
     @Override
-    public boolean equals(Object rec) {
-        if (this == rec) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (rec instanceof Rectangle) {
-            Rectangle rectangleObj = (Rectangle) rec;
-            if (!this.width.equals(rectangleObj.width)) {
-                return false;
-            }
-            if (!this.length.equals(rectangleObj.length)) {
-                return false;
-            }
-            if (!this.color.equals(rectangleObj.color)) {
+        if (obj instanceof Rectangle) {
+            Rectangle rectangleObj = (Rectangle) obj;
+            if (!this.width.equals(rectangleObj.width)
+                    || !this.length.equals(rectangleObj.length)
+                    || !this.color.equals(rectangleObj.color)) {
                 return false;
             }
             return true;
