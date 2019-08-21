@@ -28,10 +28,16 @@ public class Rectangle {
         return color;
     }
 
-    public boolean equals(Rectangle rec) {
-        if (width.equals(rec.getWidth()) && length.equals(rec.getLength())
-                && color.equals(rec.getColor())) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
+        }
+        if (obj instanceof Rectangle) {
+            Rectangle rec = (Rectangle) obj;
+            if (width.equals(rec.getWidth()) && length.equals(rec.getLength())
+                    && color.equals(rec.getColor())) {
+                return true;
+            }
         }
         return false;
     }
