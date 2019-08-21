@@ -27,4 +27,16 @@ public class Rectangle {
     public String getColor() {
         return color;
     }
+
+    public boolean equals(Rectangle ob) {
+        return (width.intValue() == ob.getWidth()) && (length.intValue() == ob.getLength());
+
+    }
+
+    public int hashCode() {
+        int result = 31;
+        result = result + (width != null ? width : 0);
+        result = result + (length != null ? length : 0);
+        return result;
+    }
 }
