@@ -6,25 +6,50 @@ package core.basesyntax;
  * реализацией equals().
  */
 public class Rectangle {
-    private Integer a;
-    private Integer b;
+    private Integer width;
+    private Integer height;
     private String color;
 
-    public Rectangle(Integer a, Integer b, String color) {
-        this.a = a;
-        this.b = b;
+    public Rectangle(Integer width, Integer height, String color) {
+        this.width = width;
+        this.height = height;
         this.color = color;
     }
 
     public Integer getA() {
-        return a;
+        return width;
     }
 
     public Integer getB() {
-        return b;
+        return height;
     }
 
     public String getColor() {
         return color;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof Rectangle) {
+            Rectangle rectangleObj = (Rectangle) obj;
+            if (!this.width.equals(rectangleObj.width)) {
+                return false;
+            }
+            if (!this.height.equals(rectangleObj.height)) {
+                return false;
+            }
+            if (!this.color.equals(rectangleObj.color)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return (width + height) * 31 - (color.length() * height);
     }
 }
