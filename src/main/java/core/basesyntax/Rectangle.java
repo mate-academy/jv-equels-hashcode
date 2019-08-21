@@ -37,7 +37,7 @@ public class Rectangle {
         }
     }
 
-
+    @Override
     public int hashCode() {
         return (width << 16) & (length << 8) & (color.length());
     }
