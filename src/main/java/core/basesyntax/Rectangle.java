@@ -24,7 +24,9 @@ public class Rectangle {
             return true;
         }
         if (obj instanceof Rectangle) {
-            return this.width.equals(width) && this.length.equals(length);
+            return this.width.equals(width)
+                    && this.length.equals(length)
+                    && this.color.equals(color);
         } else {
             return false;
         }
