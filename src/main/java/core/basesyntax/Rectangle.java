@@ -28,11 +28,14 @@ public class Rectangle {
         return color;
     }
 
-    public boolean equals(Rectangle ob) {
-        return (width.intValue() == ob.getWidth()) && (length.intValue() == ob.getLength());
+    @Override
+    public boolean equals(Object ob) {
+        Rectangle r = (Rectangle)ob;
+        return (width.intValue() == r.getWidth()) && (length.intValue() == r.getLength());
 
     }
 
+    @Override
     public int hashCode() {
         int result = 31;
         result = result + (width != null ? width : 0);
