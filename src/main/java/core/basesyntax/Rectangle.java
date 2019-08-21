@@ -1,9 +1,9 @@
 package core.basesyntax;
 
 /**
- * <p>Дан класс Rectangle. Переопределите в нем методы equals() и hashCode() так, чтобы equals()
+ * Дан класс Rectangle. Переопределите в нем методы equals() и hashCode() так, чтобы equals()
  * сравнивал экземпляры Rectangle по содержимому полей width и length,
- * а hashCode() был бы согласованным с реализацией equals().</p>
+ * а hashCode() был бы согласованным с реализацией equals().
  */
 public class Rectangle {
     private Integer width;
@@ -26,5 +26,17 @@ public class Rectangle {
 
     public String getColor() {
         return color;
+    }
+
+    public boolean equals(Rectangle rec) {
+        if (width.equals(rec.getWidth()) && length.equals(rec.getLength())
+                && color.equals(rec.getColor())) {
+            return true;
+        }
+        return false;
+    }
+
+    public int hashCode() {
+        return width * length + width / length + color.hashCode();
     }
 }
