@@ -21,7 +21,7 @@ public class Rectangle {
         if (obj == this) {
             return true;
         }
-        if (obj instenceof Rectangle) {
+        if (obj instanceof Rectangle) {
             Rectangle rec = (Rectangle) obj;
         } else {
             return false;
