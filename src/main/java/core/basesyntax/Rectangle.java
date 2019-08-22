@@ -18,7 +18,7 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == this) {
+        if (this == obj ) {
             return true;
         }
         if (obj instanceof Rectangle) {
