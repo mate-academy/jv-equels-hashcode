@@ -30,6 +30,9 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
         if (obj instanceof Rectangle) {
             Rectangle rectangle = (Rectangle) obj;
             return width.equals(rectangle.width)
