@@ -36,18 +36,9 @@ public class Rectangle {
         if (obj instanceof Rectangle) {
             Rectangle rectObj = (Rectangle) obj;
 
-            if (!this.length.equals(rectObj.length)) {
-                return false;
-            }
-            if (!this.width.equals(rectObj.width)) {
-                return false;
-            }
-            if (!this.color.equals(rectObj.color)) {
-                return  false;
-            }
-            return true;
-
-
+            return this.length.equals(rectObj.length)
+                && this.width.equals(rectObj.width)
+                && this.color.equals(rectObj.color);
         }
         return false;
     }
