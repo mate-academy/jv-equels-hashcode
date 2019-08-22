@@ -30,10 +30,18 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object ob) {
+        if (ob == null || !(ob instanceof Rectangle)) {
+            return false;
+        }
+        if (this == ob) {
+            return true;
+        }
         Rectangle r = (Rectangle)ob;
-        return (width.intValue() == r.getWidth()) && (length.intValue() == r.getLength()
-                && getColor().length() == r.getColor().length());
-
+        if ((width.intValue() == r.getWidth()) && (length.intValue() == r.getLength())
+                && (getColor().length() == r.getColor().length())) {
+            return true;
+        }
+        return false;
     }
 
     @Override
