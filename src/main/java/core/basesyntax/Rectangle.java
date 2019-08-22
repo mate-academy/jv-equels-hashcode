@@ -35,18 +35,20 @@ public class Rectangle {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
+        if (o instanceof Rectangle) {
+            Rectangle rectangle = (Rectangle) o;
+            if (!this.width.equals(rectangle.width)) return false;
+            if (!this.length.equals(rectangle.length)) return false;
+            if (!this.color.equals(rectangle.color)) return false;
         }
-
-        Rectangle rectangle = (Rectangle) o;
-        return Objects.equals(width, rectangle.width)
-                && Objects.equals(length, rectangle.length)
-                && Objects.equals(color, rectangle.color);
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(width, length, color);
+        int result = width;
+        result = 31 * result + (color != null ? color.hashCode() : 0);
+        result = 31 * result + (length != null ? length.hashCode() : 0);
+        return result;
     }
 }
