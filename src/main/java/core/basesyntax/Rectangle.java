@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-import java.Objects;
+import java.util.Objects;
 
 /**
  * <p>Дан класс Rectangle. Переопределите в нем методы equals() и hashCode() так, чтобы equals()
