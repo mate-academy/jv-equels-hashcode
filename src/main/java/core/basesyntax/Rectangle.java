@@ -31,7 +31,8 @@ public class Rectangle {
     @Override
     public boolean equals(Object ob) {
         Rectangle r = (Rectangle)ob;
-        return (width.intValue() == r.getWidth()) && (length.intValue() == r.getLength());
+        return (width.intValue() == r.getWidth()) && (length.intValue() == r.getLength()
+                && getColor().length() == r.getColor().length());
 
     }
 
@@ -40,6 +41,7 @@ public class Rectangle {
         int result = 31;
         result = result + (width != null ? width : 0);
         result = result + (length != null ? length : 0);
+        result = result + (color != null ? color.length() : 0);
         return result;
     }
 }
