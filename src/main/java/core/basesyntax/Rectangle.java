@@ -1,6 +1,5 @@
 package core.basesyntax;
 
-import java.util.Objects;
 
 /**
  * <p>Дан класс Rectangle. Переопределите в нем методы equals() и hashCode() так, чтобы equals()
@@ -37,9 +36,15 @@ public class Rectangle {
         }
         if (o instanceof Rectangle) {
             Rectangle rectangle = (Rectangle) o;
-            if (!this.width.equals(rectangle.width)) return false;
-            if (!this.length.equals(rectangle.length)) return false;
-            if (!this.color.equals(rectangle.color)) return false;
+            if (!this.width.equals(rectangle.width)) {
+                return false;
+            }
+            if (!this.length.equals(rectangle.length)) {
+                return false;
+            }
+            if (!this.color.equals(rectangle.color)) {
+                return false;
+            }
         }
         return true;
     }
