@@ -43,8 +43,6 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        return java.util.Objects.hash(this.color, this.length, this.width);
+        return (width << 16) & (length << 8) & (color.length());
     }
-
-
 }
