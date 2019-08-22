@@ -2,10 +2,11 @@ package core.basesyntax;
 
 /**
  * <p>Дан класс Rectangle. Переопределите в нем методы equals() и hashCode() так, чтобы equals()
- * сравнивал экземпляры Rectangle по содержимому полей width и length,
- * а hashCode() был бы согласованным с реализацией equals().</p>
+ * сравнивал экземпляры Rectangle по содержимому полей width и length, а hashCode() был бы
+ * согласованным с реализацией equals().</p>
  */
 public class Rectangle {
+
     private Integer width;
     private Integer length;
     private String color;
@@ -26,5 +27,27 @@ public class Rectangle {
 
     public String getColor() {
         return color;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Rectangle)) {
+            return false;
+        }
+
+        Rectangle rectangle = (Rectangle) o;
+        return width.equals(rectangle.width) && length.equals(rectangle.length) && color
+            .equals(rectangle.color);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = width.hashCode();
+        result = 31 * result + length.hashCode();
+        result = 31 * result + color.hashCode();
+        return result;
     }
 }
