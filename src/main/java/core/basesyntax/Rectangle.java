@@ -44,6 +44,9 @@ public class Rectangle {
             if (!this.width.equals(obj.width)) {
                 return false;
             }
+            if (!this.color.equals(obj.color)) {
+                return false;
+            }
         } else {
             return false;
         }
