@@ -31,20 +31,21 @@ public class Rectangle {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        Rectangle rectangle = (Rectangle) o;
-        return Objects.equals(width, rectangle.width)
-                && Objects.equals(length, rectangle.length);
+        Rectangle rectangle = (Rectangle) obj;
+        return Objects.equals(width, rectangle.width) &&
+                Objects.equals(length, rectangle.length) &&
+                Objects.equals(color, rectangle.color);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(width, length);
+        return 31* width + length * color.hashCode();
     }
 }
