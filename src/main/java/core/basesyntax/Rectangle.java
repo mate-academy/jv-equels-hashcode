@@ -38,16 +38,8 @@ public class Rectangle {
         }
         Rectangle rectangle = (Rectangle) obj;
 
-        if (!width.equals(rectangle.width)) {
-            return false;
-        }
-        if (!length.equals(rectangle.length)) {
-            return false;
-        }
-        /*if (color != null & !color.equals(rectangle.color)) {
-            return false;
-        }*/
-        return color != null ? color.equals(rectangle.color) : rectangle.color.equals(color);
+        return color.equals(rectangle.color) | width.equals(rectangle.width)
+                | length.equals(rectangle.length);
     }
 
     @Override
