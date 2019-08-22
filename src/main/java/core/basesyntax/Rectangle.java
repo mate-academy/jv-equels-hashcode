@@ -34,22 +34,14 @@ public class Rectangle {
         }
         if (obj instanceof Rectangle) {
             Rectangle comparedRectangle = (Rectangle) obj;
-            if (width.intValue() != comparedRectangle.getWidth()) {
-                return false;
-            }
-            if (length.intValue() != comparedRectangle.getLength()) {
-                return false;
-            }
-            if (!color.equals(comparedRectangle.getColor())) {
-                return false;
-            }
-            return true;
-
+            return width.intValue() == comparedRectangle.getWidth()
+                    && length.intValue() == comparedRectangle.getLength()
+                    && color.equals(comparedRectangle.getColor());
         }
         return false;
     }
 
     public int hashCode() {
-        return 31 * (width + length) + color.hashCode();
+        return 31 * width * length + 31 * (width / length) + color.hashCode();
     }
 }
