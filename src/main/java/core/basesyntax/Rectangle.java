@@ -35,13 +35,9 @@ public class Rectangle {
         }
         if (obj instanceof Rectangle) {
             Rectangle rectangleObj = (Rectangle) obj;
-            if (!this.width.equals(rectangleObj.width)) {
-                return false;
-            }
-            if (!this.length.equals(rectangleObj.length)) {
-                return false;
-            }
-            return true;
+            return this.width.equals(rectangleObj.width)
+                    && this.length.equals(rectangleObj.length)
+                    && this.color.equals(rectangleObj.color);
         }
         return false;
     }
@@ -51,6 +47,7 @@ public class Rectangle {
         int result = 0;
         result = 31 * result + (8 << (13 ^ width.byteValue()));
         result = 31 * result + (8 << (13 ^ length.byteValue()));
+        result = 31 * result + (8 << (13 ^ color.length()));
         return result;
     }
 }
