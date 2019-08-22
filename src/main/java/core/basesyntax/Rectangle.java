@@ -28,12 +28,18 @@ public class Rectangle {
         return color;
     }
 
-    public boolean equals(Rectangle rectangle) {
-        return width.equals(rectangle.width)
-                && length.equals(rectangle.length)
-                && color.equals(rectangle.color);
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Rectangle) {
+            Rectangle rectangle = (Rectangle) obj;
+            return width.equals(rectangle.width)
+                    && length.equals(rectangle.length)
+                    && color.equals(rectangle.color);
+        }
+        return false;
     }
 
+    @Override
     public int hashCode() {
         return width + length + color.length();
     }
