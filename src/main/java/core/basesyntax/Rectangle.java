@@ -42,14 +42,22 @@ public class Rectangle {
             if (!this.width.equals(rectObj.width)) {
                 return false;
             }
+            if (!this.color.equals(rectObj.color)) {
+                return  false;
+            }
             return true;
+
+
         }
         return false;
     }
 
     @Override
     public int hashCode() {
-        return 31 * length - 13 + 2 * this.width;
+        return 31 * length - 13 + 2 * width * color.length() - 2;
+        // Я использую 31, 13, 2. Потому что это уменьшает колизи.
+        // то есть уменьшает возможность похожего хэш-кода у других
+        //объектов
     }
 
 }
