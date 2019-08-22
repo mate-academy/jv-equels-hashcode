@@ -33,16 +33,23 @@ public class Rectangle {
             return true;
         }
         if (obj instanceof Rectangle) {
-            Rectangle rec = (Rectangle) obj;
-            if (width.equals(rec.getWidth()) && length.equals(rec.getLength())
-                    && color.equals(rec.getColor())) {
-                return true;
+            Rectangle comparedRectangle = (Rectangle) obj;
+            if (width.intValue() != comparedRectangle.getWidth()) {
+                return false;
             }
+            if (length.intValue() != comparedRectangle.getLength()) {
+                return false;
+            }
+            if (!color.equals(comparedRectangle.getColor())) {
+                return false;
+            }
+            return true;
+
         }
         return false;
     }
 
     public int hashCode() {
-        return width * length + width / length + color.hashCode();
+        return 31 * (width + length) + color.hashCode();
     }
 }
