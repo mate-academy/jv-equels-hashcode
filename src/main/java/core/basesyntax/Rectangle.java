@@ -21,13 +21,11 @@ public class Rectangle {
         if (obj == this) {
             return true;
         }
-        if (obj instanceof Rectangle) {
-            Rectangle rec = (Rectangle) obj;
-        } else {
+        if ( !(obj instanceof Rectangle)) {
             return false;
         }
-        return this.getColor().equals(rec.getColor()) && this.getLength() == rec.getLength()
-                && this.getWidth() == rec.getWidth();
+        return this.getColor().equals(obj.getColor()) && this.getLength() == obj.getLength()
+                && this.getWidth() == obj.getWidth();
     }
 
     @Override
