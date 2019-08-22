@@ -23,7 +23,7 @@ public class Rectangle {
         }
         if (obj instanceof Rectangle) {
             Rectangle rectangle = (Rectangle) obj;
-            return return Objects.equals(width, rectangle.width)
+            return Objects.equals(width, rectangle.width)
                     && Objects.equals(length, rectangle.length)
                     && Objects.equals(color, rectangle.color);
         } else {
