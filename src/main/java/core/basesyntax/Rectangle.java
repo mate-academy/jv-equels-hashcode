@@ -44,12 +44,14 @@ public class Rectangle {
             if (!this.width.equals(obj.width)) {
                 return false;
             }
+        } else {
+            return false;
         }
         return true;
     }
 
     @Override
     public int hashCode() {
-        return width ^ length;
+        return 31 * width ^ length;
     }
 }
