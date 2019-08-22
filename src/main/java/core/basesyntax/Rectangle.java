@@ -1,12 +1,5 @@
 package core.basesyntax;
 
-import java.util.Objects;
-
-/**
- * <p>Дан класс Rectangle. Переопределите в нем методы equals() и hashCode() так, чтобы equals()
- * сравнивал экземпляры Rectangle по содержимому полей width и length,
- * а hashCode() был бы согласованным с реализацией equals().</p>
- */
 public class Rectangle {
     private Integer width;
     private Integer length;
@@ -47,6 +40,11 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        return Objects.hash(width, length, color);
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((width == null) ? 0 : length.hashCode());
+        result = prime * result;
+        result = prime * result + ((color == null) ? 0 : color.hashCode());
+        return result;
     }
 }
