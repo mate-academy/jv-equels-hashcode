@@ -16,20 +16,15 @@ public class Rectangle {
         this.color = color;
     }
 
-
-
     public Integer getWidth() {
-
         return width;
     }
 
     public Integer getLength() {
-
         return length;
     }
 
     public String getColor() {
-
         return color;
     }
 
