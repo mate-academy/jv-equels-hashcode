@@ -39,13 +39,13 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) obj;
-        return Objects.equals(width, rectangle.width) &&
-                Objects.equals(length, rectangle.length) &&
-                Objects.equals(color, rectangle.color);
+        return Objects.equals(width, rectangle.width)
+                && Objects.equals(length, rectangle.length)
+                && Objects.equals(color, rectangle.color);
     }
 
     @Override
     public int hashCode() {
-        return 31* width + length * color.hashCode();
+        return 31 * width + length * color.hashCode();
     }
 }
