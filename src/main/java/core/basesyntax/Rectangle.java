@@ -42,11 +42,8 @@ public class Rectangle {
             return false;
         }
         Rectangle other = (Rectangle) obj;
-        if (!width.equals(other.width) || (!length.equals(other.length)
-                || (!color.equals(other.color)))) {
-            return false;
-        }
-        return true;
+        return width.equals(other.width) && length.equals(other.length)
+                && color.equals(other.color);
     }
 
     @Override
