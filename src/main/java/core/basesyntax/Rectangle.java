@@ -23,9 +23,9 @@ public class Rectangle {
         }
         if (obj instanceof Rectangle) {
             Rectangle rectangle = (Rectangle) obj;
-            return this.getColor().equals(rectangle.getColor())
-                    && this.getLength() == rectangle.getLength()
-                    && this.getWidth() == rectangle.getWidth();
+            return return Objects.equals(width, rectangle.width)
+                    && Objects.equals(length, rectangle.length)
+                    && Objects.equals(color, rectangle.color);
         } else {
             return false;
         }
