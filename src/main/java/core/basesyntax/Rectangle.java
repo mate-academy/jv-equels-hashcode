@@ -36,15 +36,10 @@ public class Rectangle {
         }
         if (o instanceof Rectangle) {
             Rectangle rectangle = (Rectangle) o;
-            if (!this.width.equals(rectangle.width)) {
-                return false;
-            }
-            if (!this.length.equals(rectangle.length)) {
-                return false;
-            }
-            if (!this.color.equals(rectangle.color)) {
-                return false;
-            }
+            return this.width.equals(rectangle.width)
+                    && this.width.equals(rectangle.width)
+                    && this.color.equals(rectangle.color);
+
         }
         return true;
     }
