@@ -35,13 +35,7 @@ public class Rectangle {
         }
         if (obj instanceof Rectangle) {
             Rectangle rectObj = (Rectangle) obj;
-            if (!(this.color.equals(rectObj.color))) {
-                return false;
-            }
-            if (this.length == rectObj.length) {
-                return false;
-            }
-            if (this.width == rectObj.width) {
+            if (!(this.color.equals(rectObj.color)) || (this.length == rectObj.length) || (this.width == rectObj.width)) {
                 return false;
             }
             return true;
