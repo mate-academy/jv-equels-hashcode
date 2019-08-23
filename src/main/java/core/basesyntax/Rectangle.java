@@ -29,12 +29,12 @@ public class Rectangle {
     }
 
     @Override
-    public boolean equals(Object ob) {
-        if (this == ob) {
-            return false;
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        if (ob instanceof Rectangle) {
-            Rectangle rectObj = (Rectangle) ob;
+        if (obj instanceof Rectangle) {
+            Rectangle rectObj = (Rectangle) obj;
             return this.width.equals(rectObj.width)
                     && this.length.equals(rectObj.length)
                     && this.color.equals(rectObj.color);
