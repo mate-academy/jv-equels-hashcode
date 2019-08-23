@@ -31,14 +31,13 @@ public class Rectangle {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
-            return true;
+            return false;
         }
         if (obj instanceof Rectangle) {
             Rectangle rectObj = (Rectangle) obj;
-            if (!(this.color.equals(rectObj.color)) || (this.length == rectObj.length) || (this.width == rectObj.width)) {
-                return false;
-            }
-            return true;
+            return this.width.equals(rectObj.width)
+                    && this.length.equals(rectObj.length)
+                    && this.color.equals(rectObj.color);
         }
         return false;
     }
