@@ -33,13 +33,13 @@ public class Rectangle {
         if (object == this) {
             return true;
         }
-        if (object == null) {
-            return false;
+        if (object instanceof Rectangle) {
+            Rectangle rectangle = (Rectangle) object;
+            return  rectangle.getWidth().equals(this.width)
+                    && rectangle.getLength().equals(this.length)
+                    && rectangle.getColor().equals(this.color);
         }
-        Rectangle rectangle = (Rectangle) object;
-        return  rectangle.getWidth().equals(this.width)
-                && rectangle.getLength().equals(this.length)
-                && rectangle.getColor().equals(this.color);
+        return false;
     }
 
     @Override
