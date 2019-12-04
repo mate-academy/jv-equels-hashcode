@@ -30,22 +30,28 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        return 26 * getLength() * getWidth()
-            * (getColor().length() != 0 ? getColor().length() : 0);
+        return 31 * getLength() * getWidth()
+            * (getColor() != null ? getColor().length() : 2);
     }
 
     @Override
     public boolean equals(Object obj) {
-        Rectangle rectangle = (Rectangle) obj;
-        return this.getColor().equals(rectangle.getColor())
-            && this.getWidth().equals(rectangle.getWidth())
-            && this.getLength().equals(rectangle.getLength())
-            && this.getClass().equals(rectangle.getClass());
-    }
+        if (this == obj) {
+            return true;
+        }
 
-    public static void main(String[] args) {
-        Rectangle firstRectangle = new Rectangle(300, 400, "Red");
-        Rectangle secondRectangle = new Rectangle(300, 400, "Red");
-        System.out.println(firstRectangle.equals(secondRectangle));
+        if (obj instanceof Rectangle) {
+            Rectangle rectangle = (Rectangle) obj;
+            if (!this.getColor().equals(rectangle.getColor())) {
+                return false;
+            }
+            if (!this.getWidth().equals(rectangle.getWidth())) {
+                return false;
+            }
+            if (!this.getLength().equals(rectangle.getLength())) {
+                return false;
+            }
+        }
+        return true;
     }
 }
