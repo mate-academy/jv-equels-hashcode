@@ -19,7 +19,7 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int result = 0;
-        result = color.length() + width.intValue() + length.intValue();
+        result = color.hashCode() + width.hashCode() + length.hashCode();
         return result;
     }
 
@@ -28,27 +28,21 @@ public class Rectangle {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof Rectangle) {
-            Rectangle rectangleobj = (Rectangle) obj;
-            if (!this.color.equals(rectangleobj.color)) {
-                return false;
-            }
-            if (!this.width.equals(rectangleobj.width)) {
-                return false;
-            }
-            if (!this.length.equals(rectangleobj.length)) {
-                return false;
-            }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
         }
-        return true;
-    }
-
-    public Integer getWidth() {
-        return width;
+        Rectangle rectangleObj = (Rectangle) obj;
+        return (this.color.equals(rectangleObj.color)
+                && this.length.equals(rectangleObj.length)
+                && this.width.equals(rectangleObj.width));
     }
 
     public Integer getLength() {
         return length;
+    }
+
+    public Integer getWidth() {
+        return width;
     }
 
     public String getColor() {
