@@ -27,4 +27,23 @@ public class Rectangle {
     public String getColor() {
         return color;
     }
+
+    public boolean equals(Object other) {
+        if (this == other) {    //this кл слово
+            return true;
+        }
+        if (other == null || this.getClass() != other.getClass()) {
+            return false;
+        }
+        Rectangle rectangle = (Rectangle) other;
+        return rectangle.getWidth() != null && rectangle.getWidth().equals(this.width)
+                && rectangle.getLength() != null && rectangle.getLength().equals(this.length)
+                && rectangle.getColor() != null && rectangle.getColor().equals(this.color);
+    }
+
+    public int hashCode() {
+        int defaultNumber = 11;
+        return width * defaultNumber + length * defaultNumber + this.color == null ? 0 : color.hashCode();
+    }
+
 }
