@@ -39,7 +39,9 @@ public class Rectangle {
 
         Rectangle recOther = (Rectangle) obj;
 
-        return color.equals(recOther.getColor()) && width.equals(recOther.getWidth()) && length.equals(recOther.getLength());
+        return color.equals(recOther.getColor())
+                && width.equals(recOther.getWidth())
+                && length.equals(recOther.getLength());
 
     }
 
