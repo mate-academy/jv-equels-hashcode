@@ -37,9 +37,10 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) o;
-        return this.color.equals(rectangle.color)
-                && this.length.equals(rectangle.length)
-                && this.width.equals(rectangle.width);
+        return this.length.equals(rectangle.length)
+                && this.width.equals(rectangle.width)
+                && (this.color == rectangle.color) || (this.color != null
+                && this.color.equals(rectangle.color));
     }
 
     @Override
