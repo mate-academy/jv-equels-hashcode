@@ -10,6 +10,29 @@ public class Rectangle {
     private Integer length;
     private String color;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o instanceof Rectangle) {
+            Rectangle rectangle = (Rectangle) o;
+            if (!this.width.equals(rectangle.width)) {
+                return false;
+            }
+            if (!this.length.equals(rectangle.length)) {
+                return false;
+            }
+            return this.color.equals(rectangle.color);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (31 * width * 2 * Math.sqrt(length) + color.length());
+    }
+
     public Rectangle(Integer width, Integer length, String color) {
         this.width = width;
         this.length = length;
