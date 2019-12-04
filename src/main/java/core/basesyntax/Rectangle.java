@@ -39,19 +39,10 @@ public class Rectangle {
         if (this == obj) {
             return true;
         }
-
-        if (obj instanceof Rectangle) {
-            Rectangle rectangle = (Rectangle) obj;
-            if (!this.getColor().equals(rectangle.getColor())) {
-                return false;
-            }
-            if (!this.getWidth().equals(rectangle.getWidth())) {
-                return false;
-            }
-            if (!this.getLength().equals(rectangle.getLength())) {
-                return false;
-            }
-        }
-        return true;
+        Rectangle rectangle = (Rectangle) obj;
+        return ((Rectangle) obj).getClass().equals(rectangle.getClass())
+            && this.getColor().equals(rectangle.getColor())
+            && this.getWidth().equals(rectangle.getWidth())
+            && this.getLength().equals(rectangle.getLength());
     }
 }
