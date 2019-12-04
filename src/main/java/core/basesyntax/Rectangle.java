@@ -16,6 +16,27 @@ public class Rectangle {
         this.color = color;
     }
 
+    @Override
+    public int hashCode() {
+        return getByteSum(this.color) * this.getWidth() * this.getLength();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && this.getClass() == obj.getClass()) {
+            Rectangle rectObj = (Rectangle)obj;
+            if (this.width - rectObj.getWidth() == 0) {
+                if (this.length - rectObj.getLength() == 0) {
+                    return this.color.equals(rectObj.getColor());
+                }
+            }
+        }
+        return false;
+    }
+
     public Integer getWidth() {
         return width;
     }
@@ -26,5 +47,14 @@ public class Rectangle {
 
     public String getColor() {
         return color;
+    }
+
+    private int getByteSum(String str) {
+        byte[] bytes = str.getBytes();
+        int sum = 0;
+        for (byte tmp : bytes) {
+            sum += tmp;
+        }
+        return sum;
     }
 }
