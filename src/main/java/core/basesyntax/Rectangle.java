@@ -31,7 +31,6 @@ public class Rectangle {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-
         Rectangle recOther = (Rectangle) obj;
         return color.equals(recOther.getColor())
                 && width.equals(recOther.getWidth())
