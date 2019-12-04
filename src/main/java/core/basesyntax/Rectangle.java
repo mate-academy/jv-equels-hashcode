@@ -15,22 +15,22 @@ public class Rectangle {
         if (this == o) {
             return true;
         }
-        if (o instanceof Rectangle) {
-            Rectangle rectangle = (Rectangle) o;
-            if (!this.width.equals(rectangle.width)) {
-                return false;
-            }
-            if (!this.length.equals(rectangle.length)) {
-                return false;
-            }
-            return this.color.equals(rectangle.color);
+        if (o == null || getClass() != o.getClass()) {
+            return false;
         }
-        return false;
+        Rectangle rectangle = (Rectangle) o;
+        return width.equals(rectangle.width)
+                && length.equals(rectangle.length)
+                && color.equals(rectangle.color);
     }
 
     @Override
     public int hashCode() {
-        return (int) (31 * width * 2 * Math.sqrt(length) + color.length());
+        int result = 0;
+        for (int i = 0; i < color.length(); i++) {
+            result += color.charAt(i);
+        }
+        return (31 * width * 2 * length + result);
     }
 
     public Rectangle(Integer width, Integer length, String color) {
