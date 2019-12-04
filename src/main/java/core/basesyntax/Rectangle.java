@@ -1,5 +1,7 @@
 package core.basesyntax;
 
+import java.util.Objects;
+
 /**
  * <p>Дан класс Rectangle. Переопределите в нем методы equals() и hashCode() так, чтобы equals()
  * сравнивал экземпляры Rectangle по содержимому полей color, width и length,
@@ -26,5 +28,24 @@ public class Rectangle {
 
     public String getColor() {
         return color;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Rectangle rectangle = (Rectangle) o;
+        return Objects.equals(width, rectangle.width)
+                && Objects.equals(length, rectangle.length)
+                && Objects.equals(color, rectangle.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.width * 31 + this.length + this.color.length();
     }
 }
