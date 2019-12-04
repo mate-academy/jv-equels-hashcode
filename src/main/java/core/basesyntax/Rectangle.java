@@ -43,7 +43,8 @@ public class Rectangle {
 
     public int hashCode() {
         int defaultNumber = 11;
-        return width * defaultNumber + length * defaultNumber + this.color == null ? 0 : color.hashCode();
+        return width * defaultNumber + length * defaultNumber + this.color == null
+                ? 0 : color.hashCode();
     }
 
 }
