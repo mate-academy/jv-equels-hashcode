@@ -30,7 +30,10 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object rectangle) {
-        if (rectangle instanceof Rectangle) {
+        if (this == rectangle) {
+            return true;
+        }
+        if (rectangle.getClass() == this.getClass() && rectangle != null) {
             Rectangle rectangleObj = (Rectangle) rectangle;
             if (this.color.equals(rectangleObj.color)
                     && this.length.equals(rectangleObj.length)
@@ -44,7 +47,7 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int result;
-        result = 18 * (color.length() + width + length);
+        result = 31 * (color.hashCode() + width + length);
         return result;
     }
 }
