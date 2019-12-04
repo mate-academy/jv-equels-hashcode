@@ -26,11 +26,14 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
+        if (color == null || width == null || length == null ){
+            return 0;
+        }
         int result = 0;
         for (int i = 0; i < color.length(); i++) {
             result += color.charAt(i);
         }
-        return (31 * width * 2 * length + result);
+        return (31 * width + 2 * length + result);
     }
 
     public Rectangle(Integer width, Integer length, String color) {
