@@ -33,7 +33,7 @@ public class Rectangle {
         if (this == object) {
             return true;
         }
-        if (object == null) {
+        if (object == null || this.getClass() != object.getClass()) {
             return false;
         }
         Rectangle rectangle = (Rectangle) object;
@@ -43,7 +43,9 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        int hash = this.width * this.length;
+        int hash = 12;
+        hash = hash + this.width == 0 ? 0 : this.width;
+        hash = hash + this.length == 0 ? 0 : this.length;
         for (int i = 0; i < this.color.length(); i++) {
             hash *= this.color.charAt(i);
         }
