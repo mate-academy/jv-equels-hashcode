@@ -39,10 +39,7 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) obj;
-        if (!width.equals(rectangle.width)) {
-            return false;
-        }
-        if (!length.equals(rectangle.length)) {
+        if (!width.equals(rectangle.width) || !length.equals(rectangle.length)) {
             return false;
         }
         return color.equals(rectangle.color);
