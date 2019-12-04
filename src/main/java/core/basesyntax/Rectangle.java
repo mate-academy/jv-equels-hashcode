@@ -26,7 +26,7 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        if (color == null || width == null || length == null ){
+        if (color == null || width == null || length == null) {
             return 0;
         }
         int result = 0;
