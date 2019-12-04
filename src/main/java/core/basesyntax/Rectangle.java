@@ -39,18 +39,7 @@ public class Rectangle {
 
         Rectangle recOther = (Rectangle) obj;
 
-        if (!color.equals(recOther.getColor())) {
-            return false;
-        }
-
-        if (!width.equals(recOther.getWidth())) {
-            return false;
-        }
-
-        if (!length.equals(recOther.getLength())) {
-            return false;
-        }
-        return true;
+        return color.equals(recOther.getColor()) && width.equals(recOther.getWidth()) && length.equals(recOther.getLength());
 
     }
 
