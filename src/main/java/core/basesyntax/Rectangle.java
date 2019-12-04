@@ -39,12 +39,9 @@ public class Rectangle {
 
         Rectangle rectangle = (Rectangle) o;
 
-        if (!(this.length.equals(rectangle.length) && this.width.equals(rectangle.width)
-                && this.color.equals(rectangle.color))) {
-            return false;
-        }
-
-        return true;
+        return this.length.equals(rectangle.length)
+                && this.width.equals(rectangle.width)
+                && this.color.equals(rectangle.color);
     }
 
     @Override
