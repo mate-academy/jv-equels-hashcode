@@ -37,22 +37,17 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) o;
-        return this.length.equals(rectangle.length)
-                && this.width.equals(rectangle.width)
-                && (this.color == rectangle.color) || (this.color != null
-                && this.color.equals(rectangle.color));
+        return ((this.length == rectangle.length) || (this.length != null
+                && this.length.equals(rectangle.length)))
+                && ((this.width == rectangle.width) || (this.width != null
+                && this.width.equals(rectangle.width)))
+                && ((this.color == rectangle.color) || (this.color != null
+                && this.color.equals(rectangle.color)));
     }
 
     @Override
     public int hashCode() {
-        int colNum = 0;
-        if (this.color != null) {
-
-            for (int i = 0; i < this.color.length(); i++) {
-                colNum = this.color.charAt(i);
-            }
-        }
-        return length * width + colNum;
+        return 31 * length.hashCode() * width.hashCode() * color.hashCode();
     }
 }
 
