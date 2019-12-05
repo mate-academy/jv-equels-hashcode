@@ -30,8 +30,7 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        return 31 * getLength() * getWidth()
-            * (getColor() != null ? getColor().length() : 2);
+        return 31 * color.hashCode() * width.hashCode() * length.hashCode();
     }
 
     @Override
@@ -39,10 +38,14 @@ public class Rectangle {
         if (this == obj) {
             return true;
         }
-        Rectangle rectangle = (Rectangle) obj;
-        return ((Rectangle) obj).getClass().equals(rectangle.getClass())
-            && this.getColor().equals(rectangle.getColor())
-            && this.getWidth().equals(rectangle.getWidth())
-            && this.getLength().equals(rectangle.getLength());
+        if (this.getClass() == obj.getClass() && obj != null) {
+            Rectangle rectangle = (Rectangle) obj;
+            if (this.getColor().equals(rectangle.getColor())
+                    && this.getWidth().equals(rectangle.getWidth())
+                    && this.getLength().equals(rectangle.getLength())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
