@@ -43,7 +43,7 @@ public class Rectangle {
 
     public int hashCode() {
         int resual = 31;
-        resual = resual * (width * 3 * 4 / 2) + color.hashCode() * 2;
+        resual = resual * (width * 3 * 4 / 2) + length + color.hashCode() * 2;
         return resual;
     }
 }
