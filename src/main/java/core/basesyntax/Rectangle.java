@@ -26,15 +26,10 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        if (color == null || width == null || length == null) {
-            return 0;
-        }
-        int result = 0;
-        for (int i = 0; i < color.length(); i++) {
-            result += color.charAt(i);
-        }
-        return (31 * Integer.toString(width).hashCode() + 2 * Integer.toString(length).hashCode()
-                + result);
+        final int number = 31;
+        return number * (color != null ? color.hashCode() : 0
+                 + Integer.toString(width).hashCode()
+                 + Integer.toString(length).hashCode() / 50);
     }
 
     public Rectangle(Integer width, Integer length, String color) {
