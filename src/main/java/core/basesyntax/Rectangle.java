@@ -45,8 +45,8 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int hash = 12;
-        hash = hash + this.width == 0 ? 0 : this.width;
-        hash = hash + this.length == 0 ? 0 : this.length;
+        hash = hash + this.width == 0 ? 0 : this.width.hashCode();
+        hash = hash + this.length == 0 ? 0 : this.length.hashCode();
         hash = hash + this.color.hashCode();
         return hash;
     }
