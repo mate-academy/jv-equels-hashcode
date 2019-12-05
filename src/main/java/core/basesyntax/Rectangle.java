@@ -35,13 +35,16 @@ public class Rectangle {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (o == null) {
+            return false;
+        }
+        if (getClass() != o.getClass()) {
             return false;
         }
         Rectangle rectangle = (Rectangle) o;
-        return Objects.equals(width, rectangle.width)
-                && Objects.equals(length, rectangle.length)
-                && Objects.equals(color, rectangle.color);
+        return this.length.equals(rectangle.length)
+                && this.width.equals(rectangle.width)
+                && this.color.equals(rectangle.color);
     }
 
     @Override
