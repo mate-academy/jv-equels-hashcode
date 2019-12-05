@@ -38,13 +38,9 @@ public class Rectangle {
         }
         if (obj instanceof Rectangle) {
             Rectangle rectangle = (Rectangle) obj;
-            if (this.color.equals(rectangle.getColor())) {
-                return true;
-            }
-            if (this.length != rectangle.getLength()) {
-                return false;
-            }
-            if (this.width != rectangle.getWidth()) {
+            if (!this.color.equals(rectangle.getColor())
+                    && this.length != rectangle.getLength()
+                    && this.width != rectangle.getWidth()) {
                 return false;
             }
         }
@@ -54,7 +50,8 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int result = 0;
-        result = this.getLength() * 31 + this.getWidth()
+        result = this.getLength().hashCode() * 31
+                + this.getWidth().hashCode()
                 + this.getColor().length() * this.color.hashCode();
         return result;
     }
