@@ -42,17 +42,16 @@ public class Rectangle {
                     && (this.getLength().equals(rectangle.getLength()))
                     && (this.getLength().equals(rectangle.getLength()))
                     && (this.getColor().equals(rectangle.getColor()))) ? true : false;
-        } else {
-            return false;
         }
+        return false;
     }
 
     @Override
     public int hashCode() {
         int hash = 31;
-        hash = hash * Integer.parseInt(Integer.toBinaryString(this.length + 31));
-        hash = hash * Integer.parseInt(Integer.toBinaryString(this.width + 31));
-        hash = hash * Integer.parseInt(Integer.toBinaryString(this.color.charAt(1) + 31));
+        hash = hash * this.length.hashCode();
+        hash = hash * this.width.hashCode();
+        hash = hash * this.color.hashCode();
         return hash;
     }
 }
