@@ -28,8 +28,9 @@ public class Rectangle {
         return color;
     }
 
+    @Override
     public boolean equals(Object other) {
-        if (this == other) {    //this кл слово
+        if (this == other) {
             return true;
         }
         if (other == null || this.getClass() != other.getClass()) {
@@ -41,10 +42,11 @@ public class Rectangle {
                 && rectangle.getColor() != null && rectangle.getColor().equals(this.color);
     }
 
+    @Override
     public int hashCode() {
-        int defaultNumber = 11;
-        return width * defaultNumber + length * defaultNumber + this.color == null
-                ? 0 : color.hashCode();
+        final int prime = 31;
+        return prime * (color != null ? color.hashCode() :
+                Integer.toString(width).hashCode() + Integer.toString(length).hashCode() / 21);
     }
 
 }
