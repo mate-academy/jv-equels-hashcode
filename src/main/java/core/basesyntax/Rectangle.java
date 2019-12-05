@@ -47,8 +47,8 @@ public class Rectangle {
     public int hashCode() {
         int result = 17;
         result = 37 * result + (color == null ? 0 : color.hashCode());
-        result = 37 * result + width;
-        result = 37 * result + length;
+        result = 37 * result + (width == null ? 0 : width);
+        result = 37 * result + (length == null ? 0 : length);
         return result;
     }
 }
