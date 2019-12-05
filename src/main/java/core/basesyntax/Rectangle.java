@@ -37,14 +37,14 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) object;
-        return this.getWidth().equals(rectangle.getWidth())
-                && this.getLength().equals(rectangle.getLength())
-                && this.getColor().equals(rectangle.getColor());
+        return this.width.equals(rectangle.width)
+                && this.length.equals(rectangle.length)
+                && this.color.equals(rectangle.color);
     }
 
     @Override
     public int hashCode() {
-        return 31 * this.getWidth() + 31 * this.getLength() + 31 * this.getColor().hashCode();
+        return 31 * this.width + 31 * this.length + 31 * this.color.hashCode();
     }
 }
 
