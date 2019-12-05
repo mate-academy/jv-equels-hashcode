@@ -39,21 +39,17 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) obj;
-        if (!this.color.equals(rectangle.color)) {
-            return false;
-        }
-        if (!this.width.equals(rectangle.width)) {
-            return false;
-        }
-        if (!this.length.equals(rectangle.length)) {
-            return false;
-        }
-        return true;
+        return width.equals(rectangle.width) && length.equals(rectangle.length)
+                && Objects.equals(color, rectangle.color);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(width, length, color);
+        int result = 17;
+        result = 37 * result + (color == null ? 0 : color.hashCode());
+        result = 37 * result + width;
+        result = 37 * result + length;
+        return result;
     }
 }
 
