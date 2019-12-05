@@ -18,8 +18,8 @@ public class Rectangle {
 
     public int hashCode() {
         int result = 1;
-        result = 31 * result + (width != null ? width : 0);
-        result = 31 * result + (length != null ? length : 0);
+        result = 31 * result + (width != null ? width.hashCode() : 0);
+        result = 31 * result + (length != null ? length.hashCode() : 0);
         result = 31 * result + (color != null ? color.hashCode() : 0);
         return result;
     }
