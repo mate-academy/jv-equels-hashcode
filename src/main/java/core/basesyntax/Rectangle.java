@@ -33,19 +33,18 @@ public class Rectangle {
         if (this == obj) {
             return true;
         }
-        if (obj instanceof Rectangle) {
-            Rectangle rectangle = (Rectangle) obj;
-            if (!this.getWidth().equals(rectangle.getWidth())) {
-                return false;
-            }
-            if (!this.getLength().equals(rectangle.getLength())) {
-                return false;
-            }
-            if (!this.getColor().equals(rectangle.getColor())) {
-                return false;
-            }
+        if (obj == null) {
+            return false;
         }
-        return true;
+        if (this.getClass() == obj.getClass()) {
+            Rectangle rectangle = (Rectangle) obj;
+            return ((this.getWidth().equals(rectangle.getWidth()))
+                    && (this.getLength().equals(rectangle.getLength()))
+                    && (this.getLength().equals(rectangle.getLength()))
+                    && (this.getColor().equals(rectangle.getColor()))) ? true : false;
+        } else {
+            return false;
+        }
     }
 
     @Override
