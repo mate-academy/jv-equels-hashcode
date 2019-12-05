@@ -42,9 +42,10 @@ public class Rectangle {
     }
 
     public int hashCode() {
-        int resual = 31;
-        resual = resual + width * 3 + resual + length
-                * resual + (color == null ? 3 : color.hashCode());
-        return resual;
+        int result = 31;
+        result = result + (width == null ? 0 : width);
+        result = result + (length == null ? 0 : length);
+        result = result + (color == null ? 0 : color.hashCode());
+        return result;
     }
 }
