@@ -1,5 +1,7 @@
 package core.basesyntax;
 
+import java.util.Objects;
+
 /**
  * <p>Дан класс Rectangle. Переопределите в нем методы equals() и hashCode() так, чтобы equals()
  * сравнивал экземпляры Rectangle по содержимому полей color, width и length,
@@ -29,30 +31,26 @@ public class Rectangle {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object object) {
+        if (this == object) {
             return true;
         }
-        if (obj instanceof Rectangle) {
-            Rectangle rectangleObj = (Rectangle) obj;
-            if (!rectangleObj.getColor().equals(rectangleObj.getColor())) {
-                return false;
-            }
-            if (rectangleObj.getLength() != rectangleObj.getLength()) {
-                return false;
-            }
-            if (rectangleObj.getWidth() != rectangleObj.getWidth()) {
-                return false;
-            }
-            return true;
+        if (object == null) {
+            return false;
         }
-        return true;
+        if (object.getClass() != Rectangle.class) {
+            return false;
+        }
+        Rectangle rectangleObj = (Rectangle) object;
+        return rectangleObj.getWidth() == rectangleObj.width
+                && rectangleObj.getLength() == rectangleObj.length
+                && Objects.equals(rectangleObj.getColor(), rectangleObj.color);
     }
 
     @Override
     public int hashCode() {
-        int result = width * length;
-        result = 31 * result + (color != null ? color.length() : 0);
+        int result = width.hashCode() + length.hashCode();
+        result = 31 * result + (color != null ? color.hashCode() : 0);
         return result;
     }
 }
