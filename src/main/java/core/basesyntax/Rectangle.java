@@ -18,7 +18,7 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        return getByteSum(this.color) * this.getWidth() * this.getLength();
+        return 31 * color.hashCode() * this.getWidth() * this.getLength();
     }
 
     @Override
@@ -28,9 +28,9 @@ public class Rectangle {
         }
         if (obj != null && this.getClass() == obj.getClass()) {
             Rectangle rectObj = (Rectangle)obj;
-            if (this.width - rectObj.getWidth() == 0) {
-                if (this.length - rectObj.getLength() == 0) {
-                    return this.color.equals(rectObj.getColor());
+            if (width.equals(rectObj.getWidth())) {
+                if (length.equals(rectObj.getLength())) {
+                    return color.equals(rectObj.getColor());
                 }
             }
         }
@@ -47,14 +47,5 @@ public class Rectangle {
 
     public String getColor() {
         return color;
-    }
-
-    private int getByteSum(String str) {
-        byte[] bytes = str.getBytes();
-        int sum = 0;
-        for (byte tmp : bytes) {
-            sum += tmp;
-        }
-        return sum;
     }
 }
