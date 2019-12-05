@@ -1,3 +1,4 @@
+
 package core.basesyntax;
 
 /**
@@ -26,5 +27,29 @@ public class Rectangle {
 
     public String getColor() {
         return color;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+
+        if (obj instanceof Rectangle) {
+            Rectangle rectangle = (Rectangle) obj;
+            return this.length.equals(rectangle.length) && this.width.equals(rectangle.width)
+                    && this.color.equals(rectangle.color);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return 31 * ((width != null) ? width.hashCode() : 0)
+                + ((color != null) ? color.hashCode() : 0)
+                + (length != null ? length.hashCode() : 0);
     }
 }
