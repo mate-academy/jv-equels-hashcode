@@ -45,8 +45,8 @@ public class Rectangle {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((color.length() + width) * 3 / 2);
-        result = prime * result + ((color.length() + length) * 31);
+        result = prime * result + ((color.hashCode() + width.hashCode()) * 31);
+        result = prime * result + ((color.hashCode() + length.hashCode()) * 31);
         return result;
     }
 }
