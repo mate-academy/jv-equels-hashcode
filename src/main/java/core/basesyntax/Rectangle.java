@@ -33,7 +33,8 @@ public class Rectangle {
         for (int i = 0; i < color.length(); i++) {
             result += color.charAt(i);
         }
-        return (31 * width + 2 * length + result);
+        return (31 * Integer.toString(width).hashCode() + 2 * Integer.toString(length).hashCode()
+                + result);
     }
 
     public Rectangle(Integer width, Integer length, String color) {
