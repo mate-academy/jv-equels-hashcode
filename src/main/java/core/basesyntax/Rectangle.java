@@ -5,7 +5,9 @@ package core.basesyntax;
  * сравнивал экземпляры Rectangle по содержимому полей color, width и length,
  * а hashCode() был бы согласованным с реализацией equals().</p>
  */
+
 public class Rectangle {
+
     private Integer width;
     private Integer length;
     private String color;
@@ -26,5 +28,28 @@ public class Rectangle {
 
     public String getColor() {
         return color;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null) {
+            return false;
+        }
+        Rectangle rectangle = (Rectangle) object;
+        return rectangle.width.equals(width)
+                && rectangle.length.equals(length)
+                && rectangle.color.equals(color);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 11;
+        result = 23 * result + width.hashCode();
+        result = 23 * result + length.hashCode();
+        result = 23 * result + color.hashCode();
+        return result;
     }
 }
