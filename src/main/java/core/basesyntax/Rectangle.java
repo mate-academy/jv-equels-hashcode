@@ -16,6 +16,32 @@ public class Rectangle {
         this.color = color;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() == obj.getClass()) {
+            Rectangle rectangle = (Rectangle) obj;
+            return width.equals(rectangle.width)
+                    && length.equals(rectangle.length)
+                    && color.equals(rectangle.color);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + width.hashCode();
+        result = 31 * result + length.hashCode();
+        result = 31 * result + color.hashCode();
+        return result;
+    }
+
     public Integer getWidth() {
         return width;
     }
