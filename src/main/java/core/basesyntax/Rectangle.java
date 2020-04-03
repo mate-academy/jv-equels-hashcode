@@ -30,7 +30,7 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object obj) {
-        return  this == obj
+        return this == obj
                 || (obj != null
                 && obj.getClass().equals(Rectangle.class)
                 && color.equals(((Rectangle) obj).color)
