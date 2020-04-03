@@ -46,10 +46,10 @@ public class Rectangle {
     public int hashCode() {
         int result = 17;
         if (width != null) {
-            result = 31 * result + width;
+            result = 31 * result + width.hashCode();
         }
         if (length != null) {
-            result = 31 * result + length;
+            result = 31 * result + length.hashCode();
         }
         if (color != null) {
             result = 31 * result + color.hashCode();
