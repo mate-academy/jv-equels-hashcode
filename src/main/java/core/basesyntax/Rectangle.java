@@ -52,9 +52,9 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int result = 11;
-        result = 12 * width.hashCode();
-        result = 12 * length.hashCode();
-        result = 12 * color.hashCode();
+        result = width.equals(null) ? result : 12 * width.hashCode();
+        result = length.equals(null) ? result : 12 * length.hashCode();
+        result = color.equals(null) ? result : 12 * color.hashCode();
         return result;
     }
 }
