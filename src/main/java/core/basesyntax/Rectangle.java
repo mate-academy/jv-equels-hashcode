@@ -1,7 +1,5 @@
 package core.basesyntax;
 
-import java.util.Objects;
-
 public class Rectangle {
     private Integer width;
     private Integer length;
@@ -44,7 +42,11 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        return Objects.hash(width, length, color);
+        int result = 5;
+        result = 31 * result + width.hashCode();
+        result = 31 * result + length.hashCode();
+        result = 31 * result + color.hashCode();
+        return result;
     }
 }
 
