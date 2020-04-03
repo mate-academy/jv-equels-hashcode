@@ -33,6 +33,9 @@ public class Rectangle {
         if (this == obj) {
             return true;
         }
+        if (obj == null){
+            return false;
+        }
         if (obj.getClass().equals(Rectangle.class)) {
             Rectangle rectangle = (Rectangle) obj;
             return width.equals(rectangle.width) && length.equals(rectangle.length)
@@ -44,9 +47,9 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int result = 17;
-        result += 31 * result + width.hashCode();
-        result += 41 * result + length.hashCode();
-        result += 23 * result + color.hashCode();
+        result += (width == null) ? 31 * result : 31 * result + width.hashCode();
+        result += (length == null) ? 31 * result : 31 * result + length.hashCode();
+        result += (color == null) ? 31 * result : 31 * result + color.hashCode();
         return result;
     }
 }
