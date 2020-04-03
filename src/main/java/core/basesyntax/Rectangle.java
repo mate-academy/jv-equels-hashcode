@@ -30,27 +30,20 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (obj.getClass().equals(Rectangle.class)) {
-            Rectangle rect = (Rectangle) obj;
-            return color.equals(rect.color)
-                    && width.equals(rect.width)
-                    && length.equals(rect.length);
-        }
-        return false;
+        return  this == obj
+                || (obj != null
+                && obj.getClass().equals(Rectangle.class)
+                && color.equals(((Rectangle) obj).color)
+                && width.equals(((Rectangle) obj).width)
+                && length.equals(((Rectangle) obj).length));
     }
 
     @Override
     public int hashCode() {
         int result = 17;
-        result = 31 * result + color.hashCode();
-        result = 31 * result + length.hashCode();
-        result = 31 * result + width.hashCode();
+        result = 31 * result + (color != null ? color.hashCode() : 0);
+        result = 31 * result + (color != null ? length.hashCode() : 0);
+        result = 31 * result + (color != null ? width.hashCode() : 0);
         return result;
     }
 }
