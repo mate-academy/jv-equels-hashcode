@@ -24,7 +24,7 @@ public class Rectangle {
         if (o == null) {
             return false;
         }
-        if (o.getClass().equals(Rectangle.class)) {
+        if (o.getClass().equals(getClass())) {
             Rectangle rectangle = (Rectangle) o;
             return width.equals(rectangle.width)
                     && length.equals(rectangle.length)
@@ -36,9 +36,9 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int result = 7;
-        result = 17 * result + color.hashCode();
-        result = 17 * result + width;
-        result = 17 * result + length;
+        result = (color == null) ? 17 * result : 17 * result + color.hashCode();
+        result = (width == null) ? 17 * result : 17 * result + width;
+        result = (length == null) ? 17 * result : 17 * result + length;
         return result;
     }
 
