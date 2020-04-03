@@ -43,15 +43,12 @@ public class Rectangle {
         if (this == obj) {
             return true;
         }
-        if (obj == null) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        if (obj.getClass() == Rectangle.class) {
-            Rectangle rectangle = (Rectangle) obj;
-            return width.equals(rectangle.width)
-                    && length.equals(rectangle.length)
-                    && color.equals(rectangle.color);
-        }
-        return false;
+        Rectangle rectangle = (Rectangle) obj;
+        return width.equals(rectangle.width)
+                && length.equals(rectangle.length)
+                && color.equals(rectangle.color);
     }
 }
