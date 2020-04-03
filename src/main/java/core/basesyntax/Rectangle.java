@@ -31,7 +31,7 @@ public class Rectangle {
         if (o == null) {
             return false;
         }
-        if (o.getClass().equals(Rectangle.class)) {
+        if (o.getClass().equals(getClass())) {
             Rectangle rectangle = (Rectangle) o;
             return width.equals(rectangle.width)
                     && length.equals(rectangle.length)
