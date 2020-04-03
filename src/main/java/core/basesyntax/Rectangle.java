@@ -27,4 +27,30 @@ public class Rectangle {
     public String getColor() {
         return color;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (obj.getClass().equals(Rectangle.class)) {
+            Rectangle rect = (Rectangle) obj;
+            return color.equals(rect.color)
+                    && width.equals(rect.width)
+                    && length.equals(rect.length);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + color.hashCode();
+        result = 31 * result + length.hashCode();
+        result = 31 * result + width.hashCode();
+        return result;
+    }
 }
