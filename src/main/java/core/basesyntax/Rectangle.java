@@ -37,17 +37,17 @@ public class Rectangle {
             return false;
         }
         Rectangle other = (Rectangle) object;
-        return getWidth().equals(other.getWidth())
-                && getLength().equals(other.getLength())
-                && getColor().equals(other.getColor());
+        return width.equals(other.width)
+                && length.equals(other.length)
+                && color.equals(other.color);
     }
 
     @Override
     public int hashCode() {
         int result = 13;
-        result = result * 31 + getWidth().hashCode();
-        result = result * 31 + getLength().hashCode();
-        result = result * 31 + getColor().hashCode();
+        result = result * 31 + (width == null ? 0 : width.hashCode());
+        result = result * 31 + (length == null ? 0 : length.hashCode());
+        result = result * 31 + (color == null ? 0 : color.hashCode());
         return result;
     }
 }
