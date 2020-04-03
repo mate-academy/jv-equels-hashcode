@@ -20,7 +20,10 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object o) {
-        if (this != o && getClass() != o.getClass()) {
+        if (this == o) {
+            return true;
+        }
+        if (null == o || getClass() != o.getClass()) {
             return false;
         }
         Rectangle rectangle = (Rectangle) o;
@@ -31,7 +34,9 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        return Objects.hash(width, length, color);
+        return (31 * (width == null ? 0 : width.hashCode()))
+                + (15 * (length == null ? 0 : length.hashCode()))
+                + (7 * (color == null ? 0 : color.hashCode()));
     }
 
     public Integer getWidth() {
