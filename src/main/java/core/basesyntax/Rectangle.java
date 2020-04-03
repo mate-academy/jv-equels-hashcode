@@ -1,10 +1,10 @@
 package core.basesyntax;
 
-/**
- * <p>Дан класс Rectangle. Переопределите в нем методы equals() и hashCode() так, чтобы equals()
- * сравнивал экземпляры Rectangle по содержимому полей color, width и length,
- * а hashCode() был бы согласованным с реализацией equals().</p>
- */
+//Функція hashcode() повертає хешкод(унікальний номер) буль-якого ненульового
+//аргументу та 0 у тому випадку, коли цей аргумент == null
+//При цьому, ти ніколи не отримуєш NullPointerException
+//Тобто, якщо поля будуть дорівнювати null, функція поверне 0
+
 public class Rectangle {
     private Integer width;
     private Integer length;
@@ -36,7 +36,7 @@ public class Rectangle {
         if (object == null) {
             return false;
         }
-        if (object.getClass().equals(Rectangle.class)) {
+        if (object.getClass().equals(getClass())) {
             Rectangle rectangle = (Rectangle) object;
             return width.equals(rectangle.width) && length.equals(rectangle.length)
                     && color.equals(rectangle.color);
