@@ -54,7 +54,7 @@ public class Rectangle {
         if (obj == null) {
             return false;
         }
-        if (!obj.getClass().equals(Rectangle.class)) {
+        if (!obj.getClass().equals(getClass())) {
             return false;
         }
         Rectangle rectangle = (Rectangle) obj;
