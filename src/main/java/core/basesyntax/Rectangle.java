@@ -20,8 +20,9 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this != o && getClass() != o.getClass()) {
+            return false;
+        }
         Rectangle rectangle = (Rectangle) o;
         return Objects.equals(width, rectangle.width)
                 && Objects.equals(length, rectangle.length)
