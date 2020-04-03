@@ -33,7 +33,7 @@ public class Rectangle {
         if (this == obj) {
             return true;
         }
-        if (obj == null || obj.getClass() != Rectangle.class) {
+        if (obj == null || obj.getClass() != getClass()) {
             return false;
         }
         Rectangle rectangle = (Rectangle) obj;
