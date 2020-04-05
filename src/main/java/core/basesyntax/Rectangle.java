@@ -39,7 +39,7 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof Rectangle
+        return obj.getClass().equals(this.getClass())
                 && ((Rectangle) obj).getColor().equals(this.color)
                 && ((Rectangle) obj).getLength().equals(this.length)
                 && ((Rectangle) obj).getWidth().equals(this.width);
