@@ -27,4 +27,6 @@ public class Rectangle {
     public String getColor() {
         return color;
     }
+
+
 }
