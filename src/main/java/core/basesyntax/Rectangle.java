@@ -36,7 +36,7 @@ public class Rectangle {
         if (object == null) {
             return false;
         }
-        if (object.getClass().equals(Rectangle.class)) {
+        if (object.getClass().equals(getClass())) {
             Rectangle rectangle = (Rectangle) object;
             return width.equals(rectangle.width)
                     && length.equals(rectangle.length)
@@ -48,9 +48,9 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int result = 109;
-        result = 53 * result + width.hashCode();
-        result = 53 * result + length.hashCode();
-        result = 53 * result + color.hashCode();
+        result = 53 * result + (width == null ? 0 : width.hashCode());
+        result = 53 * result + (length == null ? 0 : length.hashCode());
+        result = 53 * result + (color == null ? 0 : color.hashCode());
         return result;
     }
 }
