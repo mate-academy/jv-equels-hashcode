@@ -19,7 +19,7 @@ public class Rectangle {
         if (obj == null) {
             return false;
         }
-        if (obj.getClass().equals(Rectangle.class)) {
+        if (obj.getClass().equals(getClass())) {
             Rectangle rect = (Rectangle) obj;
             return width.equals(rect.width)
                     && length.equals(rect.length)
@@ -32,8 +32,8 @@ public class Rectangle {
     public int hashCode() {
         final int prime = 31;
         int a = 17;
-        a = prime * a + width;
-        a = prime * a + length;
+        a = prime * a + width.hashCode();
+        a = prime * a + length.hashCode();
         a = prime * a + color.hashCode();
         return a;
     }
