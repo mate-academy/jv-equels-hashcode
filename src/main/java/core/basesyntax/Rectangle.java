@@ -31,25 +31,28 @@ public class Rectangle {
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) {
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        if (object == null) {
+        if (obj == null) {
             return false;
         }
-        Rectangle rectangle = (Rectangle) object;
-        return rectangle.width.equals(width)
-                && rectangle.length.equals(length)
-                && rectangle.color.equals(color);
+        if (obj.getClass().equals(getClass())) {
+            Rectangle rectangle = (Rectangle) obj;
+            return color.equals(rectangle.color)
+                    && width.equals(rectangle.width)
+                    && length.equals(rectangle.length);
+        }
+        return false;
     }
 
     @Override
     public int hashCode() {
         int result = 11;
-        result = 23 * result + width.hashCode();
-        result = 23 * result + length.hashCode();
-        result = 23 * result + color.hashCode();
+        result = width == null ? result : 23 * width.hashCode();
+        result = length == null ? result : 23 * length.hashCode();
+        result = color == null ? result : 23 * color.hashCode();
         return result;
     }
 }
