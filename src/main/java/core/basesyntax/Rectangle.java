@@ -36,15 +36,16 @@ public class Rectangle {
         if (obj == this) {
             return true;
         }
-        return width.equals(((Rectangle) obj).width)
-                && length.equals(((Rectangle) obj).length)
-                && color.equals(((Rectangle) obj).color);
+        Rectangle rectangle = (Rectangle) obj;
+        return width.equals(rectangle.width)
+                && length.equals(rectangle.length)
+                && color.equals(rectangle.color);
     }
 
     @Override
     public int hashCode() {
-        int primary = 42;
-        int result = primary + color.hashCode();
+        int primary = 43;
+        int result = primary + (color == null ? 0 : color.hashCode());
         result = primary * result + (width == null ? 0 : width.hashCode());
         result = primary * result + (length == null ? 0 : length.hashCode());
         return result;
