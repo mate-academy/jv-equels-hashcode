@@ -47,12 +47,13 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        if (color == null || width == null) {
+        if (color == null || width == null || length == null) {
             return 345;
         }
         int i = 13;
         i = 31 * i * color.hashCode();
         i = 31 * i * width.hashCode();
+        i = 31 * i * length.hashCode();
         return i;
 
     }
