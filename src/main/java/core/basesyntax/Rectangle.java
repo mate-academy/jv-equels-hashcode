@@ -32,9 +32,12 @@ public class Rectangle {
     public int hashCode() {
         final int prime = 31;
         int a = 17;
-        a = prime * a + width.hashCode();
-        a = prime * a + length.hashCode();
-        a = prime * a + color.hashCode();
+        a = width == null ? prime * a
+                : prime * a + width.hashCode();
+        a = length == null ? prime * a
+                : prime * a + length.hashCode();
+        a = color == null ? prime * a
+                : prime * a + color.hashCode();
         return a;
     }
 
