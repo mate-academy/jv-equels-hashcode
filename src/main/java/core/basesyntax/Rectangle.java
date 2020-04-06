@@ -49,6 +49,9 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
+        if (width == null || length == null || color == null) {
+            return 0;
+        }
         int result = 13;
         result = 23 * result * width.hashCode();
         result = 23 * result * length.hashCode();
