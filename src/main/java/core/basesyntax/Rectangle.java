@@ -30,18 +30,29 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        int result = 42;
-        result = result * 32 * width.hashCode();
-        result = result * 32 * length.hashCode();
-        result = result * 32 * color.hashCode();
-        return result;
+        if (width != null && length != null && color != null) {
+            int result = 42;
+            result = result * 32 * width.hashCode();
+            result = result * 32 * length.hashCode();
+            result = result * 32 * color.hashCode();
+            return result;
+        }
+        return 0;
     }
 
     @Override
     public boolean equals(Object obj) {
-        return obj.getClass() == this.getClass()
-                && ((Rectangle) obj).getColor().equals(this.color)
-                && ((Rectangle) obj).getLength().equals(this.length)
-                && ((Rectangle) obj).getWidth().equals(this.width);
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (obj.getClass().equals(this.getClass())) {
+            return ((Rectangle) obj).getColor().equals(this.color)
+                    && ((Rectangle) obj).getLength().equals(this.length)
+                    && ((Rectangle) obj).getWidth().equals(this.width);
+        }
+        return false;
     }
 }
