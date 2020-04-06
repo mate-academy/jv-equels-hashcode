@@ -51,9 +51,8 @@ public class Rectangle {
         generatedHashCode = generatedHashCode * 19 + width;
         generatedHashCode = generatedHashCode * 19 + length;
         if (color == null) {
-            generatedHashCode = generatedHashCode * 19;
+            return generatedHashCode;
         }
-        generatedHashCode = generatedHashCode * 19 + color.hashCode();
-        return generatedHashCode;
+        return generatedHashCode * 19 + color.hashCode();
     }
 }
