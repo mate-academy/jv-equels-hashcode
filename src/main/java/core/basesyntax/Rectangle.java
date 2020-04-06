@@ -38,7 +38,7 @@ public class Rectangle {
             return false;
         }
 
-        if (obj.getClass().equals(Rectangle.class)) {
+        if (obj.getClass().equals(getClass())) {
             Rectangle rectangle = (Rectangle) obj;
             return width.equals(rectangle.width)
                     && length.equals(rectangle.length)
