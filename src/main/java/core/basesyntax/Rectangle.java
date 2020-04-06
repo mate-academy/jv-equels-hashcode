@@ -38,12 +38,10 @@ public class Rectangle {
         }
         if (this.getClass().equals(obj.getClass())) {
             Rectangle rect = (Rectangle) obj;
-            if (width.equals(rect.width)
-                    && length.equals(((Rectangle) obj).length)
+            return (width.equals(rect.width)
+                    && length.equals(rect.length)
                     && color.equals(rect.color)
-                    && this.hashCode() == rect.hashCode()) {
-                return true;
-            }
+                    && this.hashCode() == rect.hashCode());
         }
         return false;
     }
@@ -51,9 +49,9 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int num = 3;
-        num = length * 31 * num;
-        num = width * 31 * num;
-        num = color.hashCode() * 31 * num;
+        num = 31 * num + (color != null ? color.hashCode() : 0);
+        num = 31 * num + (color != null ? length.hashCode() : 0);
+        num = 31 * num + (color != null ? width.hashCode() : 0);
         return num;
     }
 }
