@@ -50,6 +50,9 @@ public class Rectangle {
         int generatedHashCode = 9;
         generatedHashCode = generatedHashCode * 19 + width;
         generatedHashCode = generatedHashCode * 19 + length;
+        if (color == null) {
+            generatedHashCode = generatedHashCode * 19;
+        }
         generatedHashCode = generatedHashCode * 19 + color.hashCode();
         return generatedHashCode;
     }
