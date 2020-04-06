@@ -24,11 +24,11 @@ public class Rectangle {
         if (obj == null) {
             return false;
         }
-        if (obj.getClass().equals(Rectangle.class)) {
+        if (obj.getClass().equals(this.getClass())) {
             Rectangle rectangle = (Rectangle) obj;
-            return width.equals(((Rectangle) obj).width)
-                    && length.equals(((Rectangle) obj).length)
-                    && color.equals(((Rectangle) obj).color);
+            return width.equals(rectangle.width)
+                    && length.equals(rectangle.length)
+                    && color.equals(rectangle.color);
         }
         return false;
     }
