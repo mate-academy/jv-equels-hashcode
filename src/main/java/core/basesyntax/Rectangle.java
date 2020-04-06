@@ -33,6 +33,11 @@ public class Rectangle {
         if (this == obj) {
             return true;
         }
+
+        if (obj == null) {
+            return false;
+        }
+
         if (obj.getClass().equals(getClass())) {
             Rectangle rectObj = (Rectangle) obj;
             return this.width.equals(rectObj.width)
