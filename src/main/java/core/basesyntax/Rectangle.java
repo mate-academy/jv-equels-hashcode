@@ -26,7 +26,7 @@ public class Rectangle {
             return false;
         }
 
-        if (object.getClass().equals(Rectangle.class)) {
+        if (object.getClass().equals(getClass())) {
             Rectangle rectangle = (Rectangle) object;
             return width.equals(rectangle.width) && length.equals(rectangle.length)
                     && color.equals(rectangle.color);
