@@ -17,14 +17,53 @@ public class Rectangle {
     }
 
     public Integer getWidth() {
+
         return width;
     }
 
     public Integer getLength() {
+
         return length;
     }
 
     public String getColor() {
+
         return color;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (obj.getClass().equals(Rectangle.class)) {
+            Rectangle rectangle = (Rectangle) obj;
+            return getColor() != null ? getColor().equals(rectangle.getColor())
+                    : rectangle.getColor() == null
+                    && getLength() != null ? getLength().equals(rectangle.getLength())
+                    : rectangle.getLength() == null
+                    && getColor() != null ? getWidth().equals(rectangle.getWidth())
+                    : rectangle.getWidth() == null;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        if (getColor() != null) {
+            result = prime * result + getColor().hashCode();
+        }
+        if (getLength() != null) {
+            result = prime * result + getLength().hashCode();
+        }
+        if (getWidth() != null) {
+            result = prime * result + getWidth().hashCode();
+        }
+        return result;
     }
 }
