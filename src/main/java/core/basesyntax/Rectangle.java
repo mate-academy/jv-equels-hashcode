@@ -6,6 +6,7 @@ package core.basesyntax;
  * а hashCode() был бы согласованным с реализацией equals().</p>
  */
 public class Rectangle {
+    private static final int HASHCODENUMBER = 52;
     private Integer width;
     private Integer length;
     private String color;
@@ -26,5 +27,35 @@ public class Rectangle {
 
     public String getColor() {
         return color;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (obj.getClass().equals(Rectangle.class)) {
+            Rectangle rectangle = (Rectangle) obj;
+            return (color != null && color.equals(rectangle.color)
+                    || (rectangle.color == null && color == null))
+                    && (width != null && width.equals(rectangle.width)
+                    || (rectangle.width == null && width == null))
+                    && (length != null && length.equals(rectangle.length)
+                    || (rectangle.length == null && length == null));
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 0;
+        result = width != null ? HASHCODENUMBER * result + width.hashCode() : HASHCODENUMBER;
+        result = length != null ? HASHCODENUMBER * result + length.hashCode()
+                : HASHCODENUMBER * result;
+        result = color != null ? HASHCODENUMBER * result + color.hashCode() : HASHCODENUMBER % 10;
+        return result;
     }
 }
