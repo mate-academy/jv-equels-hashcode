@@ -17,14 +17,42 @@ public class Rectangle {
     }
 
     public Integer getWidth() {
+
         return width;
     }
 
     public Integer getLength() {
+
         return length;
     }
 
     public String getColor() {
+
         return color;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (obj.getClass().equals(Rectangle.class)) {
+            Rectangle rectangle = (Rectangle) obj;
+            return width.equals(rectangle) && length.equals(rectangle) && color.equals(rectangle);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 10;
+        result = 15 * result + width.hashCode();
+        result = 15 * result + length.hashCode();
+        result = 15 * result + color.hashCode();
+
+        return result;
     }
 }
