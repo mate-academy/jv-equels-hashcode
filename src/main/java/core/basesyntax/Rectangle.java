@@ -38,28 +38,25 @@ public class Rectangle {
         }
         if (object instanceof Rectangle) {
             Rectangle rectangle = (Rectangle) object;
-            if (rectangle.getColor() != null && rectangle.getWidth() != null
-                    && rectangle.getLength() != null && color != null
-                    & width != null && length != null) {
-                return width == (rectangle.getWidth().intValue())
-                        && length == (rectangle.getLength().intValue())
-                        && color.equals(rectangle.getColor());
-            } else {
+
+            if (width == rectangle.getWidth() || (width != null && rectangle.getWidth() != null
+                    && width.equals(rectangle.getWidth()))
+                    && (length == rectangle.getLength() || (length != null && rectangle.getLength() != null
+                    && length.equals(rectangle.getLength())))
+                    && (color == rectangle.getColor() || (color != null && rectangle.getLength() != null
+                    && color.equals(rectangle.getColor())))) {
                 return true;
             }
         }
-
         return false;
     }
 
     @Override
     public int hashCode() {
         int result = 9;
-        if (color != null) {
-            result = 13 * result + width;
-            result = 13 * result + length;
-            result = 13 * result + color.hashCode();
-        }
+        result = 13 * result + (color != null ? color.hashCode() : 0);
+        result = 13 * result + (width != null ? color.hashCode() : 0);
+        result = 13 * result + (length != null ? color.hashCode() : 0);
         return result;
     }
 }
