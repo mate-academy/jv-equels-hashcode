@@ -40,14 +40,13 @@ public class Rectangle {
 
         if (object.getClass() == Rectangle.class) {
             Rectangle rectangle = (Rectangle) object;
-            if (!this.hasAllEmptyParameters()
-                    && !rectangle.hasAllEmptyParameters()) {
-                return width.equals(rectangle.width)
-                        && length.equals(rectangle.length)
-                        && color.equals(rectangle.color);
-            }
-            return this.hasAllEmptyParameters()
+            boolean check1 = !this.hasAllEmptyParameters()
+                    && !rectangle.hasAllEmptyParameters();
+            boolean check2 = this.hasAllEmptyParameters()
                     && rectangle.hasAllEmptyParameters();
+            return check1 ? (width.equals(rectangle.width)
+                    && length.equals(rectangle.length)
+                    && color.equals(rectangle.color)) : check2;
         }
 
         return false;
