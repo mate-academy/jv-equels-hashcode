@@ -56,17 +56,9 @@ public class Rectangle {
     public int hashCode() {
         int result = 11;
 
-        if (getWidth() != null) {
-            result = 23 * result + width.hashCode();
-        }
-
-        if (getLength() != null) {
-            result = 23 * result + length.hashCode();
-        }
-
-        if (getColor() != null) {
-            result = 23 * result + color.hashCode();
-        }
+        result = getWidth() != null ? 23 * result + width.hashCode() : result;
+        result = getLength() != null ? 23 * result + length.hashCode() : result;
+        result = getColor() != null ? 23 * result + color.hashCode() : result;
 
         return result;
     }
