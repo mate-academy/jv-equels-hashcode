@@ -24,36 +24,22 @@ public class Rectangle {
         if (object == null || getClass() != object.getClass()) {
             return false;
         }
-        if (width == null || length == null || color == null) {
-            return true;
-        }
         Rectangle rectangle = (Rectangle) object;
-        return width.equals(rectangle.width) && length.equals(rectangle.length)
-                && color.equals(rectangle.color);
+        return ((width == null && rectangle.width == null)
+                || (width != null && width.equals(rectangle.width)))
+                && ((length == null && rectangle.length == null)
+                || (length != null && length.equals(rectangle.length)))
+                && ((color == null && rectangle.color == null)
+                || (color != null && color.equals(rectangle.color)));
     }
 
     @Override
     public int hashCode() {
-        if (length != null || color != null || width != null) {
-            int result = 14;
-            result = 13 * result + width.hashCode();
-            result = 13 * result + color.hashCode();
-            result = 13 * result + length.hashCode();
-            return result;
-        }
-        return 0;
+        int result = 11;
+        int factor = 22;
+        result *= factor + (width == null ? 0 : width.hashCode());
+        result *= factor + (length == null ? 0 : length.hashCode());
+        result *= factor + (color == null ? 0 : color.hashCode());
+        return result;
     }
-
-    public Integer getWidth() {
-        return width;
-    }
-
-    public Integer getLength() {
-        return length;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
 }
