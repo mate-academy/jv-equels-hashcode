@@ -39,11 +39,13 @@ public class Rectangle {
         if (object instanceof Rectangle) {
             Rectangle rectangle = (Rectangle) object;
 
-            if (width == rectangle.getWidth() || (width != null && rectangle.getWidth() != null
-                    && width.equals(rectangle.getWidth()))
-                    && (length == rectangle.getLength() || (length != null && rectangle.getLength() != null
+            if ((width == rectangle.getWidth() || (width != null && rectangle.getWidth() != null
+                    && width.equals(rectangle.getWidth())))
+                    && (length == rectangle.getLength()
+                    || (length != null && rectangle.getLength() != null
                     && length.equals(rectangle.getLength())))
-                    && (color == rectangle.getColor() || (color != null && rectangle.getLength() != null
+                    && (color == rectangle.getColor()
+                    || (color != null && rectangle.getLength() != null
                     && color.equals(rectangle.getColor())))) {
                 return true;
             }
