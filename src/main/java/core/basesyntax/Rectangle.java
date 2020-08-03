@@ -16,6 +16,34 @@ public class Rectangle {
         this.color = color;
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        if (width == null || length == null || color == null) {
+            return true;
+        }
+        Rectangle rectangle = (Rectangle) object;
+        return width.equals(rectangle.width) && length.equals(rectangle.length)
+                && color.equals(rectangle.color);
+    }
+
+    @Override
+    public int hashCode() {
+        if (length != null || color != null || width != null) {
+            int result = 14;
+            result = 13 * result + width.hashCode();
+            result = 13 * result + color.hashCode();
+            result = 13 * result + length.hashCode();
+            return result;
+        }
+        return 0;
+    }
+
     public Integer getWidth() {
         return width;
     }
@@ -27,4 +55,5 @@ public class Rectangle {
     public String getColor() {
         return color;
     }
+
 }
