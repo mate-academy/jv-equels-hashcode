@@ -44,17 +44,13 @@ public class Rectangle {
 
         Rectangle rectangle = (Rectangle) object;
         if ((getWidth() == null && rectangle.getWidth() == null)
+                || (getWidth() != null && getWidth().equals(rectangle.getWidth()))
                 && (getLength() == null && rectangle.getLength() == null)
-                && (getColor() == null && rectangle.getColor() == null)) {
+                || (getLength() != null && getLength().equals(rectangle.getLength()))
+                && (getColor() == null && rectangle.getColor() == null)
+                || (getColor() != null && getColor().equals(rectangle.getColor()))) {
             return true;
         }
-
-        if (getWidth().equals(rectangle.getWidth())
-                && getLength().equals(rectangle.getLength())
-                && getColor().equals(rectangle.getColor())) {
-            return true;
-        }
-
         return false;
     }
 
@@ -63,23 +59,12 @@ public class Rectangle {
         final int prime = 17;
         int result = 31;
 
-        if (getColor() == null) {
-            result = prime * result;
-        } else {
-            result = prime * result + getColor().hashCode();
-        }
+        result = prime * result + (color == null ? 0 : color.hashCode());
 
-        if (getLength() == null) {
-            result = prime * result;
-        } else {
-            result = prime * result + getLength();
-        }
+        result = prime * result + (length == null ? 0 : length.hashCode());
 
-        if (getWidth() == null) {
-            result = prime * result;
-        } else {
-            result = prime * result + getWidth();
-        }
+        result = prime * result + (width == null ? 0 : width.hashCode());
+
         return result;
     }
 }
