@@ -48,14 +48,13 @@ public class Rectangle {
         }
 
         Rectangle rectangle = (Rectangle) object;
-        if (width == null || length == null || color == null) {
-            return rectangle.width == null
+        return (width == null || length == null || color == null)
+                ? rectangle.width == null
                     || rectangle.length == null
-                    || rectangle.color == null;
-        } else {
-            return (width == rectangle.width)
-                    || (length == rectangle.length)
-                    || (color.equals(rectangle.color));
-        }
+                    || rectangle.color == null
+                        : (width == rectangle.width)
+                        || (length == rectangle.length)
+                        || (color.equals(rectangle.color));
     }
 }
+
