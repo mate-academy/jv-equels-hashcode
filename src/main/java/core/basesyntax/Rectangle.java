@@ -37,20 +37,20 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) object;
-        return width != null && width.equals(rectangle.width) || rectangle.width == width
-                && length != null && length.equals(rectangle.length) || rectangle.length == length
-                && color != null && color.equals(rectangle.color) || rectangle.color == color;
+        return ((width != null && width.equals(rectangle.width))
+                || (rectangle.width == width))
+                && ((length != null && length.equals(rectangle.length))
+                || (rectangle.length == length))
+                && ((color != null && color.equals(rectangle.color))
+                || (rectangle.color == color));
     }
 
     @Override
     public int hashCode() {
         int result = 17;
-        int modifier1 = width == null ? 1 : width;
-        int modifier2 = length == null ? 1 : length;
-        int modifier3 = color == null ? 1 : color.hashCode();
-        result = 31 * result * modifier1;
-        result = 31 * result * modifier2;
-        result = 31 * result * modifier3;
+        result = width == null ? 31 * result * 1 : 31 * result * width.hashCode();
+        result = length == null ? 31 * result * 1 : 31 * result * length.hashCode();
+        result = length == null ? 31 * result * 1 : 31 * result * length.hashCode();
         return result;
     }
 }
