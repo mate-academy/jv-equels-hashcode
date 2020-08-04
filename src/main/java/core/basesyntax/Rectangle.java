@@ -40,13 +40,12 @@ public class Rectangle {
 
         if (object.getClass() == Rectangle.class) {
             Rectangle rectangle = (Rectangle) object;
-            boolean check1 = width != null && color != null && length != null
-                    && rectangle.width != null && rectangle.color != null && rectangle.length != null;
-            boolean check2 = width == null && color == null && length == null
-                    && rectangle.width == null && rectangle.color == null && rectangle.length == null;
-            return check1 ? (width.equals(rectangle.width)
-                    && length.equals(rectangle.length)
-                    && color.equals(rectangle.color)) : check2;
+            boolean widthNotNull = width != null && rectangle.width != null;
+            boolean lengthNotNull = length != null && rectangle.length != null;
+            boolean colorNotNull = color != null && rectangle.color != null;
+            return widthNotNull ? width.equals(rectangle.width) : width == rectangle.width
+                    && lengthNotNull ? length.equals(rectangle.length) : length == rectangle.length
+                    && colorNotNull ? color.equals(rectangle.color) : color == rectangle.color;
         }
 
         return false;
