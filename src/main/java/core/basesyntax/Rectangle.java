@@ -40,11 +40,11 @@ public class Rectangle {
         if (obj.getClass().equals(Rectangle.class)) {
             Rectangle rectangle = (Rectangle) obj;
             return (color != null && color.equals(rectangle.color)
-                    || (rectangle.color == null && color == null))
+                    || (rectangle.color == color))
                     && (width != null && width.equals(rectangle.width)
-                    || (rectangle.width == null && width == null))
+                    || (rectangle.width == width))
                     && (length != null && length.equals(rectangle.length)
-                    || (rectangle.length == null && length == null));
+                    || (rectangle.length == length));
         }
         return false;
     }
@@ -52,10 +52,12 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int result = 0;
-        result = width != null ? HASHCODENUMBER * result + width.hashCode() : HASHCODENUMBER;
+        result = width != null ? HASHCODENUMBER * result + width.hashCode()
+                : HASHCODENUMBER * result;
         result = length != null ? HASHCODENUMBER * result + length.hashCode()
                 : HASHCODENUMBER * result;
-        result = color != null ? HASHCODENUMBER * result + color.hashCode() : HASHCODENUMBER % 10;
+        result = color != null ? HASHCODENUMBER * result + color.hashCode()
+                : HASHCODENUMBER * result;
         return result;
     }
 }
