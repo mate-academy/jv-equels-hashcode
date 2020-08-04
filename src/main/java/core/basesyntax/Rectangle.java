@@ -15,7 +15,7 @@ public class Rectangle {
         this.length = length;
         this.color = color;
     }
-
+    
     public Integer getWidth() {
         return width;
     }
@@ -31,9 +31,9 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int result = 61;
-        result = 31 * result + (getLength() == null ? 0 : getLength().hashCode());
-        result = 31 * result + (getWidth() == null ? 0 : getWidth().hashCode());
-        result = 31 * result + (getColor() == null ? 0 : getColor().hashCode());
+        result = 31 * result + (length == null ? 0 : length.hashCode());
+        result = 31 * result + (width == null ? 0 : width.hashCode());
+        result = 31 * result + (color == null ? 0 : color.hashCode());
         return result;
     }
 
@@ -47,11 +47,11 @@ public class Rectangle {
         }
         Rectangle rect = (Rectangle) obj;
 
-        return width == null
-                ? width == rect.width : width.equals(width)
-                && (length == null || rect.length == null)
-                ? length == rect.length : length.equals(rect.length)
-                && (color == null || rect.color == null)
-                ? color == rect.color : color.equals(rect.color);
+        return (length != null && rect.length != null)
+                ? length.equals(rect.length) : length == rect.length
+                && (width != null && rect.width != null)
+                ? width.equals(rect.width) : width == rect.width
+                && (color != null && rect.color != null)
+                ? color.equals(rect.color) : color == rect.color;
     }
 }
