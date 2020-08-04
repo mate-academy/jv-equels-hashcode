@@ -35,8 +35,8 @@ public class Rectangle {
     @Override
     public int hashCode() {
         final int prime = 31;
-        int result = prime + (width == null ? 0 : width);
-        result = prime * result + (length == null ? 0 : length);
+        int result = prime + (width == null ? 0 : width.hashCode());
+        result = prime * result + (length == null ? 0 : length.hashCode());
         result = prime * result + (color == null ? 0 : color.hashCode());
         return result;
     }
