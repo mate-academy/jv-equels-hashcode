@@ -13,5 +13,5 @@ public class MyTests {
         System.out.println(rectangle2.hashCode() == rectangle3.hashCode());
         System.out.println(rectangle2.equals(rectangle3));
         System.out.println(rectangle2.hashCode() + " != " + rectangle3.hashCode());
-     }
+    }
 }
