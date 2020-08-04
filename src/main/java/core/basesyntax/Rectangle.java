@@ -1,9 +1,9 @@
 package core.basesyntax;
 
 public class Rectangle {
-    private Integer width;
-    private Integer length;
-    private String color;
+    private final Integer width;
+    private final Integer length;
+    private final String color;
 
     public Rectangle(Integer width, Integer length, String color) {
         this.width = width;
@@ -33,12 +33,12 @@ public class Rectangle {
         }
         if (obj.getClass().equals(Rectangle.class)) {
             Rectangle rectangle = (Rectangle) obj;
-            return (width == null && rectangle.width == null
-                    || width != null && width.equals(rectangle.width))
-                    && (length == null && rectangle.length == null
-                    || length != null && length.equals(rectangle.length))
-                    && (color == null && rectangle.color == null
-                    || color != null && color.equals(rectangle.color));
+            return (width == null ? rectangle.width == null
+                    : width.equals(rectangle.width))
+                    && (length == null ? rectangle.length == null
+                    : length.equals(rectangle.length))
+                    && (color == null ? rectangle.color == null
+                    : color.equals(rectangle.color));
         }
         return false;
     }
