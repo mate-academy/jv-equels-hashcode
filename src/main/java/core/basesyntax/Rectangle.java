@@ -15,7 +15,7 @@ public class Rectangle {
         this.length = length;
         this.color = color;
     }
-    
+
     public Integer getWidth() {
         return width;
     }
