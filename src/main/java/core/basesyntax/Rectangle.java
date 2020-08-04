@@ -49,7 +49,7 @@ public class Rectangle {
             return false;
         }
 
-        if (obj instanceof Rectangle) {
+        if (obj.getClass().equals(Rectangle.class)) {
             Rectangle rectangle = (Rectangle) obj;
             return (width == rectangle.width) || (width != null && width.equals(rectangle.width))
                     && (length == rectangle.length) || (length != null
