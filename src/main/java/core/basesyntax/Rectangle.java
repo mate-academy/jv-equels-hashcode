@@ -32,15 +32,17 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) object;
-        return width == null && rectangle.width == null
-                || width != null && rectangle.width.equals(width)
-                && length == null && rectangle.length == null
-                || color != null && rectangle.color.equals(color);
+        return (length == null || rectangle.length == null)
+                ? length == rectangle.length : length.equals(rectangle.length)
+                && (width == null || rectangle.width == null)
+                ? width == rectangle.width : width.equals(rectangle.width)
+                && (color == null || rectangle.color == null)
+                ? color == rectangle.color : color.equals(rectangle.color);
     }
 
     @Override
     public int hashCode() {
-        int primaryNumber = 14;
+        int primaryNumber = 17;
         return ((primaryNumber * 7 + (width == null ? 0 : width))
                 * 7 + (length == null ? 0 : length))
                 * 7 + (color == null ? 0 : color.hashCode());
