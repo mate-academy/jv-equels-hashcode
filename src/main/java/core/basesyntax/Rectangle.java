@@ -42,18 +42,21 @@ public class Rectangle {
         if (this == object) {
             return true;
         }
-        if (object == null) {
+        if (object == null || !object.getClass().equals(Rectangle.class)) {
             return false;
         }
-        if (width == null || length == null || color == null) {
-            return true;
+
+        Rectangle rectangle = (Rectangle) object;
+
+        if (width != null ? !width.equals(rectangle.width) : rectangle.width != null) {
+            return false;
         }
-        if (object.getClass().equals(Rectangle.class)) {
-            Rectangle rectangle = (Rectangle) object;
-            return width.equals(rectangle.width)
-                    && length.equals(rectangle.length)
-                    && color.equals(rectangle.color);
+        if (length != null ? !length.equals(rectangle.length) : rectangle.length != null) {
+            return false;
         }
-        return false;
+        if (color != null ? !color.equals(rectangle.color) : rectangle.color != null) {
+            return false;
+        }
+        return true;
     }
 }
