@@ -40,9 +40,9 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) obj;
-        return (width == rectangle.width || width.equals(rectangle.width))
-                && (length == rectangle.length || length.equals(rectangle.length))
-                && (color == rectangle.color || color.equals(rectangle.color));
+        return width == null ? width == rectangle.width : width.equals(rectangle.width)
+                && length == null ? length == rectangle.length : length.equals(rectangle.length)
+                && color == null ? color == rectangle.color : color.equals(rectangle.color);
     }
 
     @Override
