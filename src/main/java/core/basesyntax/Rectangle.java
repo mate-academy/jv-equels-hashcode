@@ -33,11 +33,11 @@ public class Rectangle {
         if (this == object) {
             return true;
         }
-        if (!(object instanceof Rectangle) || object == null) {
+        if (!getClass().equals(object.getClass()) ||object == null){
             return false;
         }
         Rectangle rectangle = (Rectangle) object;
-        return (length == null || rectangle.length == null)
+        return (length == null)
                 ? length == rectangle.length : length.equals(rectangle.length)
                 && (width == null || rectangle.width == null)
                 ? width == rectangle.width : width.equals(rectangle.width)
