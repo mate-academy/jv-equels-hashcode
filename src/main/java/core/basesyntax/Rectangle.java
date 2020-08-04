@@ -41,18 +41,17 @@ public class Rectangle {
                     || (length != null && length.equals(rectangle.length)))
                     && (color == rectangle.color
                     || (color != null && color.equals(rectangle.color)));
-        } else {
-            return false;
         }
+        return false;
     }
 
     @Override
     public int hashCode() {
-        final int variable = 5;
-        int result = 10;
-        result = variable * result + ((length == null) ? 0 : length.hashCode());
-        result = variable * result + ((width == null) ? 0 : width.hashCode());
-        result = variable * result + ((color == null) ? 0 : color.hashCode());
+        final int number = 11;
+        int result = 7;
+        result = number * result + ((length == null) ? 0 : length.hashCode());
+        result = number * result + ((width == null) ? 0 : width.hashCode());
+        result = number * result + ((color == null) ? 0 : color.hashCode());
         return result;
     }
 }
