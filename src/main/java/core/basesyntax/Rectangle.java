@@ -47,10 +47,10 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        int result = 18;
-        result = 32 * result + (width != null ? width.hashCode() : 0);
-        result = 32 * result + (length != null ? length.hashCode() : 0);
-        result = 32 * result + (color != null ? color.hashCode() : 0);
+        int result = 17;
+        result = 31 * result + (width != null ? width.hashCode() : 0);
+        result = 31 * result + (length != null ? length.hashCode() : 0);
+        result = 31 * result + (color != null ? color.hashCode() : 0);
         return result;
     }
 }
