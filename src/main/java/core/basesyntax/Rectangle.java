@@ -30,9 +30,8 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object other) {
-        if (other != null && getClass() == other.getClass() && this == other) {
-            return true;
-        }
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
 
         Rectangle rect = (Rectangle) other;
         return (width == rect.width || (width != null && width.equals(rect.getWidth())))
@@ -42,7 +41,7 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        final int prime = 42;
+        final int prime = 41;
         int result = 11;
         result = prime * result + ((width != null) ? width.hashCode() : 0);
         result = prime * result + ((length != null) ? length.hashCode() : 0);
