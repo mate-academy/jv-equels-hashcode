@@ -43,15 +43,12 @@ public class Rectangle {
         }
 
         Rectangle rectangle = (Rectangle) object;
-        if (width == rectangle.width
-                || (width != null && width.equals(rectangle.width))
-                && (length == rectangle.length)
-                || (length != null && length.equals(rectangle.length))
-                && (color == rectangle.color)
-                || (color != null && color.equals(rectangle.color))) {
-            return true;
-        }
-        return false;
+        return ((width == rectangle.width)
+                || (width != null && width.equals(rectangle.width)))
+                && ((length == rectangle.length)
+                || (length != null && length.equals(rectangle.length)))
+                && ((color == rectangle.color)
+                || (color != null && color.equals(rectangle.color)));
     }
 
     @Override
