@@ -39,20 +39,31 @@ public class Rectangle {
         if (obj == null) {
             return false;
         }
+
+        Rectangle rectangle = (Rectangle) obj;
+        if (obj.getClass() != this.getClass()) {
+            return false;
+        }
+        if (width == null && rectangle.width == null && length == null && rectangle.length == null
+                && color == null && rectangle.color == null) {
+            return true;
+        }
         if (obj.getClass().equals(Rectangle.class)) {
-            Rectangle rectangle = (Rectangle) obj;
-            return width.equals(rectangle) && length.equals(rectangle) && color.equals(rectangle);
+
+            return width.equals(rectangle.width) && length.equals(rectangle.length)
+                    && color.equals(rectangle.color);
         }
         return false;
     }
 
     @Override
     public int hashCode() {
-        int result = 10;
-        result = 15 * result + width.hashCode();
-        result = 15 * result + length.hashCode();
-        result = 15 * result + color.hashCode();
-
+        int result = 17;
+        final int prime = 31;
+        result = prime * result + (width != null ? width.hashCode() : 0);
+        result = prime * result + (length != null ? length.hashCode() : 0);
+        result = prime * result + (color != null ? color.hashCode() : 0);
         return result;
+
     }
 }
