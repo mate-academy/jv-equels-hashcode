@@ -44,7 +44,7 @@ public class Rectangle {
                     || (length != null && rectangle.width == null)
                     || (color == null && rectangle.color != null)
                     || (color != null && rectangle.color == null))
-                    || (((width == null && rectangle.width == null)
+                    && (((width == null && rectangle.width == null)
                     || width.equals(rectangle.width))
                     && ((length == null && rectangle.width == null)
                     || length.equals(rectangle.length))
