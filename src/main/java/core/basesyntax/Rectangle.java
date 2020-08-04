@@ -25,16 +25,11 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) o;
-        if (width == null && rectangle.width != null
-                || width != null && !width.equals(rectangle.width)) {
-            return false;
-        }
-        if (length == null && rectangle.length != null
-                || length != null && !length.equals(rectangle.length)) {
-            return false;
-        }
-        return color == null && rectangle.color == null
-               || color != null && color.equals(rectangle.color);
+        return ((width == rectangle.width) || (width != null && width.equals(rectangle.width)))
+                    && ((length == rectangle.length)
+                        || (length != null && length.equals(rectangle.length)))
+                    && ((color == rectangle.color)
+                        || (color != null && color.equals(rectangle.color)));
     }
 
     @Override
