@@ -37,9 +37,9 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) o;
-        return (width != null ? !width.equals(rectangle.width) : rectangle.width != null)
-                || (length != null ? !length.equals(rectangle.length) : rectangle.length != null)
-                || (color != null ? color.equals(rectangle.color) : rectangle.color == null);
+        return width == null ? width == rectangle.width : width.equals(rectangle.width)
+              && length == null ? length == rectangle.length : length.equals(rectangle.length)
+              && color == null ? color == rectangle.color : color.equals(rectangle.color);
     }
 
     @Override
