@@ -17,17 +17,14 @@ public class Rectangle {
     }
 
     public Integer getWidth() {
-
         return width;
     }
 
     public Integer getLength() {
-
         return length;
     }
 
     public String getColor() {
-
         return color;
     }
 
@@ -40,8 +37,8 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) obj;
-        return width == rectangle.width || (width != null
-                && width.equals(rectangle.getWidth())
+        return (width == rectangle.width || (width != null
+                && width.equals(rectangle.getWidth()))
                 && (length == rectangle.length || (length != null
                 && length.equals(rectangle.getLength())))
                 && (color == rectangle.color || (color != null
@@ -58,4 +55,3 @@ public class Rectangle {
         return result;
     }
 }
-
