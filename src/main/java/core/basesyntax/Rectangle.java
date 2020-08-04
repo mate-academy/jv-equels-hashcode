@@ -51,7 +51,7 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        int result = 0;
+        int result = 17;
         result *= HASHCODENUMBER + (width != null ? width.hashCode() : 0);
         result *= HASHCODENUMBER + (color != null ? color.hashCode() : 0);
         result *= HASHCODENUMBER + (length != null ? length.hashCode() : 0);
