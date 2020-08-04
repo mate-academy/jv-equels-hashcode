@@ -34,20 +34,16 @@ public class Rectangle {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object figure) {
+        if (this == figure) {
             return true;
         }
-        if (obj == null || !obj.getClass().equals(Rectangle.class)) {
+        if (figure == null || getClass() != figure.getClass()) {
             return false;
         }
-        Rectangle objectCast = (Rectangle) obj;
-        if (length == null && width == null && color == null && objectCast.color == null
-                && objectCast.width == null && objectCast.length == null) {
-            return hashCode() == objectCast.hashCode();
-        }
-        return (length != null && length.equals(objectCast.length))
-                && (width != null && width.equals(objectCast.width))
-                && (color != null && color.equals(objectCast.color));
+        Rectangle recta = (Rectangle) figure;
+        return (width == recta.width || (width != null && width.equals(recta.getWidth())))
+                && (length == recta.length || (length != null && length.equals(recta.getLength())))
+                && (color == recta.color || (color != null && color.equals(recta.getColor())));
     }
 }
