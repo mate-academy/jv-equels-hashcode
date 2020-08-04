@@ -25,20 +25,20 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) o;
-        if (rectangle.color == null || rectangle.width == null || rectangle.length == null
-                || color == null || width == null || length == null) {
-            return this.hashCode() == rectangle.hashCode();
-        }
-        return width.equals(rectangle.width) && length.equals(rectangle.length)
-                && color.equals(rectangle.color);
+        return (length == null || rectangle.length == null)
+                ? length == rectangle.length : length.equals(rectangle.length)
+                && (width == null || rectangle.width == null)
+                ? width == rectangle.width : width.equals(rectangle.width)
+                && (color == null || rectangle.color == null)
+                ? color == rectangle.color : color.equals(rectangle.color);
     }
 
     @Override
     public int hashCode() {
         int primecode = 31;
         int result = 1;
-        result = primecode * result + (width == null ? 0 : width);
-        result = primecode * result + (length == null ? 0 : length);
+        result = primecode * result + (width == null ? 0 : width.hashCode());
+        result = primecode * result + (length == null ? 0 : length.hashCode());
         result = primecode * result + (color == null ? 0 : color.hashCode());
         return result;
     }
