@@ -50,7 +50,7 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        int result = 15;
+        int result = 17;
         if (width != null) {
             result = 31 * result + width.hashCode();
         }
