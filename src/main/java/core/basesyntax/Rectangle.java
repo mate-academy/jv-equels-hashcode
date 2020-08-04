@@ -38,21 +38,18 @@ public class Rectangle {
 
         if (object.getClass().equals(Rectangle.class)) {
             Rectangle rectangle = (Rectangle) object;
-            if ((getWidth() == null && rectangle.getWidth() != null)
-                    || (getWidth() != null && rectangle.getWidth() == null)
-                    || (getLength() == null && rectangle.getWidth() != null)
-                    || (getLength() != null && rectangle.getWidth() == null)
-                    || (getColor() == null && rectangle.getColor() != null)
-                    || (getColor() != null && rectangle.getColor() == null)) {
-                return false;
-            }
-
-            return (((getWidth() == null && rectangle.getWidth() == null)
-                    || getWidth().equals(rectangle.getWidth()))
-                    && ((getLength() == null && rectangle.getWidth() == null)
-                    || getLength().equals(rectangle.getLength()))
-                    && ((getColor() == null && rectangle.getColor() == null)
-                    || (getColor().equals(rectangle.getColor()))));
+            return !((width == null && rectangle.width != null)
+                    || (width != null && rectangle.width == null)
+                    || (length == null && rectangle.width != null)
+                    || (length != null && rectangle.width == null)
+                    || (color == null && rectangle.color != null)
+                    || (color != null && rectangle.color == null))
+                    || (((width == null && rectangle.width == null)
+                    || width.equals(rectangle.width))
+                    && ((length == null && rectangle.width == null)
+                    || length.equals(rectangle.length))
+                    && ((color == null && rectangle.color == null)
+                    || (color.equals(rectangle.color))));
         }
         return false;
     }
@@ -61,10 +58,10 @@ public class Rectangle {
     public int hashCode() {
         int result = 23;
         if (width != null) {
-            result = 31 * result * width;
+            result = 31 * result * width.hashCode();
         }
         if (length != null) {
-            result = 31 * result * length;
+            result = 31 * result * length.hashCode();
         }
         if (color != null) {
             result = 31 * result * color.hashCode();
