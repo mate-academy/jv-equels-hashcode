@@ -33,22 +33,14 @@ public class Rectangle {
             return false;
         }
 
-        if (obj.getClass() != this.getClass()) {
-            return false;
-        }
+        if (obj.getClass().equals(Rectangle.class)) {
+            Rectangle rectangle = (Rectangle) obj;
+            return (width == rectangle.width || width != null && width.equals(rectangle.width)
+                && length == rectangle.length || length != null && length.equals(rectangle.length)
+                && color == rectangle.color || color != null && color.equals(rectangle.getColor()));
 
-        Rectangle rectangle = (Rectangle) obj;
-        if ((width == rectangle.width) && (length != rectangle.length)
-                && (color.equals(rectangle.getColor()))) {
-            return true;
         }
-
-        if ((width == null && rectangle.width == null)
-                && (length == null && rectangle.length == null)
-                && (color == null && rectangle.color == null)) {
-            return true;
-        }
-        return true;
+        return false;
     }
 
     @Override
