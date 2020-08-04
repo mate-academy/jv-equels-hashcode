@@ -43,10 +43,10 @@ public class Rectangle {
         if (object.getClass().equals(Rectangle.class)) {
             Rectangle rectangle = (Rectangle) object;
             return ((width == rectangle.getWidth())
-                            || (null != width && width.equals(rectangle.getWidth())))
+                            || (width != null && width.equals(rectangle.getWidth())))
                     &&
                     ((length == rectangle.getLength())
-                            || (null != length && length.equals(rectangle.getLength()))
+                            || (length != null && length.equals(rectangle.getLength()))
                     &&
                     color == rectangle.getColor());
         }
