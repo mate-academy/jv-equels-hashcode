@@ -47,8 +47,7 @@ public class Rectangle {
                     &&
                     ((length == rectangle.getLength())
                             || (length != null && length.equals(rectangle.getLength()))
-                    &&
-                    color == rectangle.getColor());
+                    && color == rectangle.getColor());
         }
         return false;
     }
