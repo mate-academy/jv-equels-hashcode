@@ -45,11 +45,15 @@ public class Rectangle {
         if (object == null) {
             return false;
         }
+        if (width == null || length == null || color ==null) {
+            return true;
+        }
         if (object.getClass().equals(Rectangle.class)) {
             Rectangle rectangle = (Rectangle) object;
-            return width == null || width.equals(rectangle.width)
-                    && length == null || length.equals(rectangle.length)
-                    && color == null || color.equals(rectangle.color);
+
+            return width.equals(rectangle.width)
+                    && length.equals(rectangle.length)
+                    && color.equals(rectangle.color);
         }
         return false;
     }
