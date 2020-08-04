@@ -40,10 +40,10 @@ public class Rectangle {
 
         if (object.getClass() == Rectangle.class) {
             Rectangle rectangle = (Rectangle) object;
-            boolean check1 = !this.hasAllEmptyParameters()
-                    && !rectangle.hasAllEmptyParameters();
-            boolean check2 = this.hasAllEmptyParameters()
-                    && rectangle.hasAllEmptyParameters();
+            boolean check1 = width != null && color != null && length != null
+                    && rectangle.width != null && rectangle.color != null && rectangle.length != null;
+            boolean check2 = width == null && color == null && length == null
+                    && rectangle.width == null && rectangle.color == null && rectangle.length == null;
             return check1 ? (width.equals(rectangle.width)
                     && length.equals(rectangle.length)
                     && color.equals(rectangle.color)) : check2;
@@ -59,9 +59,5 @@ public class Rectangle {
         hashCode = length != null ? 31 * hashCode + length.hashCode() : 31 * hashCode;
         hashCode = color != null ? 31 * hashCode + color.hashCode() : 31 * hashCode;
         return hashCode;
-    }
-
-    public boolean hasAllEmptyParameters() {
-        return width == null && color == null && length == null;
     }
 }
