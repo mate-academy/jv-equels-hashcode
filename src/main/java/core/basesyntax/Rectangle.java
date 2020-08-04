@@ -25,7 +25,7 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        final int prime = 42;
+        final int prime = 47;
         int result = 1;
         result = prime * result + (width == null ? 0 : width.hashCode());
         result = prime * result + (color == null ? 0 : color.hashCode());
