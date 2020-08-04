@@ -25,11 +25,11 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) object;
-        return ((width == null && rectangle.width == null)
+        return (width == rectangle.width
                 || (width != null && width.equals(rectangle.width)))
-                && ((length == null && rectangle.length == null)
+                && (length == rectangle.length
                 || (length != null && length.equals(rectangle.length)))
-                && ((color == null && rectangle.color == null)
+                && (color == rectangle.color
                 || (color != null && color.equals(rectangle.color)));
     }
 
