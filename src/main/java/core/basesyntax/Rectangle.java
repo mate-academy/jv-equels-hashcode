@@ -30,6 +30,9 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object object) {
+        if (object == null) {
+            return false;
+        }
         if (object.getClass().equals(Rectangle.class)) {
             if (this == object) {
                 return true;
