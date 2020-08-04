@@ -42,13 +42,12 @@ public class Rectangle {
             Rectangle rect = (Rectangle) obj;
 
             return (width == null && rect.width == null
-                    || width.equals(rect.width))
+                    || (width != null && width.equals(rect.width)))
                     && (length == null && rect.length == null
-                    || length.equals(rect.length))
+                    || (length != null && length.equals(rect.length)))
                     && (color == null && rect.color == null
-                    || color.equals(rect.color));
+                    || (color != null && color.equals(rect.color)));
         }
-
         return false;
     }
 
