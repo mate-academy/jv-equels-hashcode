@@ -48,11 +48,11 @@ public class Rectangle {
 
         Rectangle rectangle = (Rectangle) object;
 
-        return (width == null && rectangle.width == null
-                || width != null && width.equals(rectangle.width)
-                && length == null && rectangle.length == null
-                || length != null && length.equals(rectangle.length)
-                && color == null && rectangle.color == null
-                || color != null && color.equals(rectangle.color));
+        return ((width == null && rectangle.width == null
+                || width != null && width.equals(rectangle.width))
+                && (length == null && rectangle.length == null
+                || length != null && length.equals(rectangle.length))
+                && (color == null && rectangle.color == null
+                || color != null && color.equals(rectangle.color)));
     }
 }
