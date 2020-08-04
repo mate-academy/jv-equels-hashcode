@@ -54,14 +54,11 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        if (width != null && length != null && color != null) {
-            int hashCode = 17;
-            hashCode = 31 * hashCode + width.hashCode();
-            hashCode = 31 * hashCode + length.hashCode();
-            hashCode = 31 * hashCode + color.hashCode();
-            return hashCode;
-        }
-        return 0;
+        int hashCode = 17;
+        hashCode = width != null ? 31 * hashCode + width.hashCode() : 31 * hashCode;
+        hashCode = length != null ? 31 * hashCode + length.hashCode() : 31 * hashCode;
+        hashCode = color != null ? 31 * hashCode + color.hashCode() : 31 * hashCode;
+        return hashCode;
     }
 
     public boolean hasAllEmptyParameters() {
