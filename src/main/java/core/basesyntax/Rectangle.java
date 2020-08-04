@@ -35,9 +35,18 @@ public class Rectangle {
         if (object == null) {
             return false;
         }
-        Rectangle rectangle = (Rectangle) object;
 
         if (object.getClass().equals(Rectangle.class)) {
+            Rectangle rectangle = (Rectangle) object;
+            if ((getWidth() == null && rectangle.getWidth() != null)
+                    || (getWidth() != null && rectangle.getWidth() == null)
+                    || (getLength() == null && rectangle.getWidth() != null)
+                    || (getLength() != null && rectangle.getWidth() == null)
+                    || (getColor() == null && rectangle.getColor() != null)
+                    || (getColor() != null && rectangle.getColor() == null)) {
+                return false;
+            }
+
             return (((getWidth() == null && rectangle.getWidth() == null)
                     || getWidth().equals(rectangle.getWidth()))
                     && ((getLength() == null && rectangle.getWidth() == null)
@@ -51,14 +60,14 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int result = 23;
-        if (getWidth() != null) {
-            result = 31 * result * getWidth();
+        if (width != null) {
+            result = 31 * result * width;
         }
-        if (getLength() != null) {
-            result = 31 * result * getLength();
+        if (length != null) {
+            result = 31 * result * length;
         }
-        if (getColor() != null) {
-            result = 31 * result * getColor().hashCode();
+        if (color != null) {
+            result = 31 * result * color.hashCode();
         }
         return result;
     }
