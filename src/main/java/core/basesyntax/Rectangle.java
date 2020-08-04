@@ -47,7 +47,7 @@ public class Rectangle {
         }
         Rectangle rect = (Rectangle) obj;
 
-        return (length != null && rect.length != null)
+        return (length != null)
                 ? length.equals(rect.length) : length == rect.length
                 && (width != null && rect.width != null)
                 ? width.equals(rect.width) : width == rect.width
