@@ -35,18 +35,13 @@ public class Rectangle {
             return false;
         }
 
-        try {
-            Rectangle rectangle = (Rectangle) obj;
-            return (width == null || rectangle.width == null) ? width == rectangle.width
-                    : width.equals(rectangle.width)
-                    && (length == null || rectangle.length == null) ? length == rectangle.length
-                    : length.equals(rectangle.length)
-                    && (color == null || rectangle.color == null) ? color == rectangle.color
-                    : color.equals(rectangle.color);
-        } catch (ClassCastException e) {
-            e.printStackTrace();
-        }
-        return false;
+        Rectangle rectangle = (Rectangle) obj;
+        return width == null ? width == rectangle.width
+                : width.equals(rectangle.width)
+                && (length == null || rectangle.length == null) ? length == rectangle.length
+                : length.equals(rectangle.length)
+                && (color == null || rectangle.color == null) ? color == rectangle.color
+                : color.equals(rectangle.color);
     }
 
     public Integer getWidth() {
