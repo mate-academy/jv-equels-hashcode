@@ -37,11 +37,11 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) o;
-        return ((rectangle.width != null && width.equals(rectangle.width))
+        return ((width != null && width.equals(rectangle.width))
                 || (width == rectangle.width))
-                && ((rectangle.length != null && length.equals(rectangle.length))
+                && ((length != null && length.equals(rectangle.length))
                 || (length == rectangle.length))
-                && ((rectangle.color != null && color.equals(rectangle.color))
+                && ((color != null && color.equals(rectangle.color))
                 || (color == rectangle.color));
     }
 
