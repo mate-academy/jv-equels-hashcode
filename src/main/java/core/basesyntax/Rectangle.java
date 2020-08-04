@@ -43,9 +43,6 @@ public class Rectangle {
         }
 
         Rectangle rect = (Rectangle) object;
-        if (hashCode() != rect.hashCode()) {
-            return false;
-        }
 
         return (width == null || rect.width == null)
                     ? width == rect.width : width.equals(rect.width)
