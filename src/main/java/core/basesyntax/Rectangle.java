@@ -39,24 +39,23 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object object) {
-        if (object == null || !object.getClass().equals(Rectangle.class)) {
-            return false;
-        }
-
         if (this == object) {
             return true;
         }
 
+        if (object == null || !object.getClass().equals(Rectangle.class)) {
+            return false;
+        }
+
         Rectangle rectangle = (Rectangle) object;
-        if ((width == null && rectangle.width == null)
-                && (length == null && rectangle.length == null)
-                && (color == null && rectangle.color == null)) {
-            return true;
+        if (width == null || length == null || color == null) {
+            return rectangle.width == null
+                    || rectangle.length == null
+                    || rectangle.color == null;
+        } else {
+            return (width == rectangle.width)
+                    || (length == rectangle.length)
+                    || (color.equals(rectangle.color));
         }
-        if ((width == rectangle.width) && (length == rectangle.length)
-                && (color.equals(rectangle.getColor()))) {
-            return true;
-        }
-        return true;
     }
 }
