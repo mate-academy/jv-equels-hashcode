@@ -30,14 +30,18 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object obj) {
-        if (width == null || length == null || color == null || obj == null) {
+        if (obj == this) {
             return true;
-        } else if (obj == this) {
-            return true;
-        } else if (obj.getClass().equals(Rectangle.class)) {
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (obj.getClass().equals(Rectangle.class)) {
             Rectangle rectangle = (Rectangle) obj;
-            return
-                        width.equals(rectangle.width)
+            return width == null && rectangle.width == null
+                    || length == null && rectangle.length == null
+                    || color == null && rectangle.color == null
+                    || width.equals(rectangle.width)
                     && length.equals(rectangle.length)
                     && color.equals(rectangle.color);
         }
