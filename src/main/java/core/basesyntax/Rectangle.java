@@ -18,15 +18,11 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        if (width != null || length != null || color != null) {
-            int result = 17;
-            result = 31 * result + width.hashCode();
-            result = 31 * result + length.hashCode();
-            result = 31 * result + color.hashCode();
-            return result;
-        } else {
-            return 0;
-        }
+        int result = 17;
+        result = 31 * result + (width != null ? width.hashCode() : 0);
+        result = 31 * result + (length != null ? length.hashCode() : 0);
+        result = 31 * result + (color != null ? color.hashCode() : 0);
+        return result;
     }
 
     @Override
@@ -35,21 +31,22 @@ public class Rectangle {
             return true;
         }
 
-        if (obj == null) {
+        if (obj == null || !obj.getClass().equals(Rectangle.class)) {
             return false;
         }
 
-        Rectangle rectangle = (Rectangle) obj;
-        if (obj.getClass().equals(Rectangle.class)
-                && (width != null || length != null || color != null)) {
-            return width.equals(rectangle.width)
-                    && length.equals(rectangle.length)
-                    && color.equals(rectangle.color);
-        } else {
-            return width == rectangle.width
-                    && length == rectangle.length
-                    && color == rectangle.color;
+        try {
+            Rectangle rectangle = (Rectangle) obj;
+            return (width == null || rectangle.width == null) ? width == rectangle.width
+                    : width.equals(rectangle.width)
+                    && (length == null || rectangle.length == null) ? length == rectangle.length
+                    : length.equals(rectangle.length)
+                    && (color == null || rectangle.color == null) ? color == rectangle.color
+                    : color.equals(rectangle.color);
+        } catch (ClassCastException e) {
+            e.printStackTrace();
         }
+        return false;
     }
 
     public Integer getWidth() {
