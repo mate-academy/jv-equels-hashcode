@@ -47,13 +47,9 @@ public class Rectangle {
             return false;
         }
         Rectangle objectCast = (Rectangle) obj;
-        if (length == null && width == null && color == null && objectCast.color == null
-                && objectCast.width == null && objectCast.length == null) {
-            return hashCode() == objectCast.hashCode();
-        }
-        return (length != null && length.equals(objectCast.length))
-                && (width != null && width.equals(objectCast.width))
-                && (color != null && color.equals(objectCast.color));
+        return (length != null ? length.equals(objectCast.length) : objectCast.length == length)
+                && (width != null ? width.equals(objectCast.width) : objectCast.width == width)
+                && (color != null ? color.equals(objectCast.color) : objectCast.color == color);
 
     }
 }
