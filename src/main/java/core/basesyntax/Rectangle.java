@@ -38,9 +38,12 @@ public class Rectangle {
         }
         if (obj.getClass().equals(Rectangle.class)) {
             Rectangle rectangle = (Rectangle) obj;
-            return (width == rectangle.width || width.equals(rectangle.width))
-                    && (length == rectangle.length || length.equals(rectangle.length))
-                    && (color == rectangle.color || color.equals(rectangle.color));
+            return (width == rectangle.width)
+                    || (width != null && width.equals(rectangle.width))
+                    && (length == rectangle.length)
+                    || (length != null && length.equals(rectangle.length))
+                    && (color == rectangle.color)
+                    || (color != null && color.equals(rectangle.color));
         }
         return false;
     }
