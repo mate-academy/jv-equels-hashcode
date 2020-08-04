@@ -36,9 +36,13 @@ public class Rectangle {
         if (object == null || object.getClass() != this.getClass()) {
             return false;
         }
-        Rectangle figure = (Rectangle) object;
-        return width == null && length == null
-                && color == null ? figure.color == null : color.equals(figure.color);
+        if (object.getClass().equals(Rectangle.class)) {
+            Rectangle figure = (Rectangle) object;
+            return width == null ? width == figure.width : width.equals(figure.width)
+                    && length == null ? length == figure.length : length.equals(figure.length)
+                    && color == null ? color == figure.color : color.equals(figure.color);
+        }
+        return false;
     }
 
     @Override
