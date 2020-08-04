@@ -62,20 +62,3 @@ public class Rectangle {
         return 0;
     }
 }
-
-/* if (this.getLength().equals(rectangle.getLength())
-                    && this.getWidth().equals(rectangle.getWidth())
-                    && this.getColor().equals(rectangle.getColor())) */
-
-   /*     if (this.getLength() == object.getLength()
-                && this.getWidth() == object.getWidth()
-                && this.getColor().equals(object.getColor())) {
-            return true;
-        } */
-
-   /*             if((rectangle.width==null || this.getWidth()==null)
-                    || (rectangle.length==null || this.getLength()==null)
-                    || (rectangle.color==null || this.getColor()==null)) {
-                return rectangle.width==this.getWidth()
-                        && rectangle.length==this.getLength()
-                        && rectangle.color==this.getColor(); */
