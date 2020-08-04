@@ -12,7 +12,6 @@ public class Rectangle {
     }
 
     public Integer getWidth() {
-
         return width;
     }
 
