@@ -30,8 +30,12 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object other) {
-        if (this == other) return true;
-        if (other == null || getClass() != other.getClass()) return false;
+        if (this == other) {
+            return true;
+        }
+        if (other == null || getClass() != other.getClass()) {
+            return false;
+        }
 
         Rectangle rect = (Rectangle) other;
         return (width == rect.width || (width != null && width.equals(rect.getWidth())))
