@@ -41,12 +41,12 @@ public class Rectangle {
         }
         if (obj.getClass().equals(Rectangle.class)) {
             Rectangle rectangle = (Rectangle) obj;
-            return getColor() != null ? getColor().equals(rectangle.getColor())
-                    : rectangle.getColor() == null
-                    && getLength() != null ? getLength().equals(rectangle.getLength())
-                    : rectangle.getLength() == null
-                    && getColor() != null ? getWidth().equals(rectangle.getWidth())
-                    : rectangle.getWidth() == null;
+            return color != null ? color.equals(rectangle.color)
+                    : rectangle.color == null
+                    && length != null ? length.equals(rectangle.length)
+                    : rectangle.length == null
+                    && width != null ? width.equals(rectangle.width)
+                    : rectangle.width == null;
         }
         return false;
     }
@@ -55,14 +55,14 @@ public class Rectangle {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        if (getColor() != null) {
-            result = prime * result + getColor().hashCode();
+        if (color != null) {
+            result = prime * result + color.hashCode();
         }
-        if (getLength() != null) {
-            result = prime * result + getLength().hashCode();
+        if (length != null) {
+            result = prime * result + length.hashCode();
         }
-        if (getWidth() != null) {
-            result = prime * result + getWidth().hashCode();
+        if (length != null) {
+            result = prime * result + width.hashCode();
         }
         return result;
     }
