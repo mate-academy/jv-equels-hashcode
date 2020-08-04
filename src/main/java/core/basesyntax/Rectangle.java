@@ -6,6 +6,8 @@ package core.basesyntax;
  * а hashCode() был бы согласованным с реализацией equals().</p>
  */
 public class Rectangle {
+    static final int CONSTANT = 31;
+
     private Integer width;
     private Integer length;
     private String color;
@@ -30,8 +32,6 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object object) {
-        System.out.println(width + " -- " + length + " -- " + color);
-
         if (this == object) {
             return true;
         }
@@ -40,32 +40,30 @@ public class Rectangle {
             return false;
         }
 
-        if (object instanceof Rectangle) {
+        if (object.getClass().equals(Rectangle.class)) {
             Rectangle rectangle = (Rectangle) object;
-            return checkNullOrEquals(width, rectangle.getWidth())
+            return ((null == width && null == rectangle.getWidth())
+                            || width.equals(rectangle.getWidth()))
                     &&
-                    checkNullOrEquals(length, rectangle.getLength())
+                    ((null == length && null == rectangle.getLength())
+                            || length.equals(rectangle.getLength()))
                     &&
                     color == rectangle.getColor();
         }
         return false;
     }
 
-    private boolean checkNullOrEquals(Integer a, Integer b) {
-        return (null == a && null == b || a.equals(b));
-    }
-
     @Override
     public int hashCode() {
-        int result = 13;
+        int result = CONSTANT;
         if (null != width) {
-            result += 7 * width;
+            result += CONSTANT * width;
         }
         if (null != length) {
-            result += 3 * length;
+            result += CONSTANT * length;
         }
         if (null != color) {
-            result += 11 * color.hashCode();
+            result += CONSTANT * color.hashCode();
         }
         return result;
     }
