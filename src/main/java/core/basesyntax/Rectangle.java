@@ -35,9 +35,9 @@ public class Rectangle {
             return false;
         }
         Rectangle comparedRectangle = (Rectangle) rectangle;
-        if (this.width == null && comparedRectangle.width == null
-                && this.length == null && comparedRectangle.length == null
-                && this.color == null && comparedRectangle.color == null) {
+        if ((this.width == null && comparedRectangle.width == null)
+                || (this.length == null && comparedRectangle.length == null)
+                || (this.color == null && comparedRectangle.color == null)) {
             return true;
         }
         return ((this.width.equals(comparedRectangle.width))
