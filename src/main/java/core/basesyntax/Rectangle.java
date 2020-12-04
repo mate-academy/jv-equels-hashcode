@@ -35,15 +35,13 @@ public class Rectangle {
             return false;
         }
         Rectangle comparedRectangle = (Rectangle) rectangle;
-        if ((this.width == null && comparedRectangle.width == null)
-                || (this.length == null && comparedRectangle.length == null)
-                || (this.color == null && comparedRectangle.color == null)) {
-            return true;
-        }
-        return ((this.width.equals(comparedRectangle.width))
-                    && (this.length.equals(comparedRectangle.length))
-                    && (this.color.equals(comparedRectangle.color))
-                    && (this.hashCode() == rectangle.hashCode()));
+
+        return ((width == comparedRectangle.width
+                || (width != null && width.equals(comparedRectangle.width)))
+                && (length == comparedRectangle.length
+                || (length != null && length.equals(comparedRectangle.length)))
+                && (color == comparedRectangle.color
+                || (color != null && color.equals(comparedRectangle.color))));
     }
 
     @Override
