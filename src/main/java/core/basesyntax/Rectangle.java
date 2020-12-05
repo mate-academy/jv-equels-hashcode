@@ -1,7 +1,5 @@
 package core.basesyntax;
 
-import java.util.Objects;
-
 public class Rectangle {
     private Integer width;
     private Integer length;
@@ -34,13 +32,17 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) obj;
-        return Objects.equals(width, rectangle.width)
-                && Objects.equals(length, rectangle.length)
-                && Objects.equals(color, rectangle.color);
+        return (width == rectangle.width || width != null && width.equals(rectangle.width))
+                && (length == rectangle.length || length != null && length.equals(rectangle.length))
+                && (color == rectangle.color || color != null && color.equals(rectangle.color));
     }
     
     @Override
     public int hashCode() {
-        return Objects.hash(width, length, color);
+        int result = 17;
+        result = 31 * result + (width == null ? 0 : width.hashCode());
+        result = 31 * result + (length == null ? 0 : length.hashCode());
+        result = 31 * result + (color == null ? 0 : color.hashCode());
+        return result;
     }
 }
