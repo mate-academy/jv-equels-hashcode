@@ -32,13 +32,14 @@ public class Rectangle {
             return false;
         }
         if (rect.getClass().equals(Rectangle.class)) {
-            Rectangle comparator = (Rectangle) rect;
-            return ((this.width == null && comparator.width == null)
-                && (this.length == null && comparator.length == null)
-                && (this.color == null && comparator.color == null))
-                || (this.width.equals(comparator.width)
-                && this.length.equals(comparator.length)
-                && this.color.equals(comparator.color));
+            Rectangle rectangle = (Rectangle) rect;
+            return ((this.width == rectangle.width || this.width != null
+                    && this.width.equals(rectangle.width))
+                && (this.length == rectangle.length || this.length != null
+                    && this.length.equals(rectangle.length))
+                && (this.color == rectangle.color || this.color != null
+                    && this.color.equals(rectangle.color)));
+
         }
         return false;
     }
