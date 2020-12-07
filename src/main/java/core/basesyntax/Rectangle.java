@@ -23,7 +23,7 @@ public class Rectangle {
         if (this == obj) {
             return true;
         }
-        if (obj == null) {
+        if (obj == null || obj.getClass() != getClass()) {
             return false;
         }
         Rectangle rectangle = (Rectangle) obj;
@@ -31,12 +31,11 @@ public class Rectangle {
                 && (this.length == null && rectangle.length == null)
                 && (this.width == null && rectangle.width == null)) {
             return true;
-        } else if (obj.getClass().equals(Rectangle.class)) {
-            return this.width != null && this.width.equals(rectangle.width)
-                    && this.length != null && this.length.equals(rectangle.length)
-                    && this.color != null && this.color.equals(rectangle.color);
         }
-        return false;
+        return this.width != null && this.width.equals(rectangle.width)
+                && this.length != null && this.length.equals(rectangle.length)
+                && this.color != null && this.color.equals(rectangle.color);
+
     }
 
     public Integer getWidth() {
