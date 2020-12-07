@@ -44,10 +44,10 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        int hash = 17;
-        hash *= 31 + (this.length == null ? 0 : this.length);
-        hash *= 31 + (this.color == null ? 0 : this.color.length());
-        hash *= 31 + (this.width == null ? 0 : this.width);
-        return hash;
+        int hashCode = 17;
+        hashCode *= 31 + (this.length == null ? 0 : this.length);
+        hashCode *= 31 + (this.color == null ? 0 : this.color.length());
+        hashCode *= 31 + (this.width == null ? 0 : this.width);
+        return hashCode;
     }
 }
