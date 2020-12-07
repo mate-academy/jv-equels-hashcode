@@ -40,7 +40,6 @@ public class Rectangle {
                     && (color == currentReactangle.color
                     || (color != null && color.equals(currentReactangle.color)));
         }
-
         return false;
     }
 
@@ -51,6 +50,5 @@ public class Rectangle {
         result = 17 * result + (width == null ? 0 : width.hashCode());
         result = 31 * result + (length == null ? 0 : length.hashCode());
         return result;
-
     }
 }
