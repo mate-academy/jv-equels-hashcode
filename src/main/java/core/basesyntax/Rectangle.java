@@ -25,31 +25,19 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object rectangle) {
-        Rectangle castedRectangle = (Rectangle) rectangle;
-        if (castedRectangle == this) {
+        if (this == rectangle) {
             return true;
         }
-        if (castedRectangle == null) {
+        if (rectangle == null || rectangle.getClass() != this.getClass()) {
             return false;
         }
-        if (castedRectangle.getClass().equals(Rectangle.class)) {
-            if (width == null && castedRectangle.width != null) {
-                return false;
-            }
-            if (length == null && castedRectangle.length != null) {
-                return false;
-            }
-            if (color == null && castedRectangle.color != null) {
-                return false;
-            }
-            if (width == null && length == null && color == null) {
-                return true;
-            }
-            return this.width.equals(castedRectangle.width)
-                && this.length.equals(castedRectangle.length)
-                && this.color.equals(castedRectangle.color);
-        }
-        return false;
+        Rectangle castedRectangle = (Rectangle) rectangle;
+        return (width == (castedRectangle.width)
+                || (width != null && width.equals(castedRectangle.width)))
+                && (length == (castedRectangle.length)
+                || (length != null && length.equals(castedRectangle.length)))
+                && (color == (castedRectangle.color)
+                || (color != null && color.equals(castedRectangle.color)));
     }
 
     @Override
