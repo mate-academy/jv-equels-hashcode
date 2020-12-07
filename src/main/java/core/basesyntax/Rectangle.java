@@ -35,7 +35,6 @@ public class Rectangle {
         return this.width != null && this.width.equals(rectangle.width)
                 && this.length != null && this.length.equals(rectangle.length)
                 && this.color != null && this.color.equals(rectangle.color);
-
     }
 
     public Integer getWidth() {
