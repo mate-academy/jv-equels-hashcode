@@ -1,7 +1,5 @@
 package core.basesyntax;
 
-import java.util.Objects;
-
 public class Rectangle {
     private Integer width;
     private Integer length;
@@ -35,11 +33,25 @@ public class Rectangle {
         }
         if (obj.getClass().equals(Rectangle.class)) {
             Rectangle current = (Rectangle) obj;
-            return (Objects.equals(this.width, current.width))
-                    && (Objects.equals(this.length, current.length))
-                    && (Objects.equals(this.color, current.color));
+            return compareField(this.width, current.width)
+                    && compareField(this.length, current.length)
+                    && compareField(this.color, current.color);
         }
         return false;
+    }
+
+    private boolean compareField(Integer first, Integer second) {
+        if (first == null && second != null || first != null && second == null) {
+            return false;
+        }
+        return first == null || first.equals(second);
+    }
+
+    private boolean compareField(String first, String second) {
+        if (first == null && second != null || first != null && second == null) {
+            return false;
+        }
+        return first == null || first.equals(second);
     }
 
     @Override
