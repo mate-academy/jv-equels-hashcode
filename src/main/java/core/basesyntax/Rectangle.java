@@ -31,15 +31,14 @@ public class Rectangle {
         if (object == null) {
             return false;
         }
-        Rectangle rectangle = (Rectangle) object;
-
-        if ((rectangle.length == null && this.length == null
-                || this.length.compareTo(rectangle.length) == 0)
-                && (rectangle.color == null && this.color == null
-                || this.color.equals(rectangle.color))
-                && (rectangle.width == null && this.width == null
-                || this.width.compareTo(rectangle.width) == 0)) {
-            return (rectangle.getClass().equals(Rectangle.class));
+        if ((object.getClass().equals(Rectangle.class))) {
+            Rectangle rectangle = (Rectangle) object;
+            return (rectangle.length == null && this.length == null
+                    || this.length.compareTo(rectangle.length) == 0)
+                    && (rectangle.color == null && this.color == null
+                    || this.color.equals(rectangle.color))
+                    && (rectangle.width == null && this.width == null
+                    || this.width.compareTo(rectangle.width) == 0);
         }
         return false;
     }
