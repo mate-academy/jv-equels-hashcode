@@ -23,16 +23,18 @@ public class Rectangle {
         if (this == obj) {
             return true;
         }
+        if (obj == null) {
+            return false;
+        }
         Rectangle rectangle = (Rectangle) obj;
         if ((this.color == null && rectangle.color == null)
                 && (this.length == null && rectangle.length == null)
                 && (this.width == null && rectangle.width == null)) {
             return true;
-        } else if (rectangle.hashCode() != this.hashCode()) {
-            return false;
         } else if (obj.getClass().equals(Rectangle.class)) {
-            return this.width.equals(rectangle.width) && this.length.equals(rectangle.length)
-                    && this.color.equals(rectangle.color);
+            return this.width != null && this.width.equals(rectangle.width)
+                    && this.length != null && this.length.equals(rectangle.length)
+                    && this.color != null && this.color.equals(rectangle.color);
         }
         return false;
     }
