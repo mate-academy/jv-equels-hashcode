@@ -35,9 +35,9 @@ public class Rectangle {
         }
         if (shape.getClass().equals(Rectangle.class)) {
             Rectangle current = (Rectangle) shape;
-            return Objects.equals(this.color, current.color)
-                    && Objects.equals(this.width, current.width)
-                    && Objects.equals(this.length, current.length);
+            return ((this.length == current.length || this.length != null && this.length.equals(current.length)))
+                    && ((this.width == current.width || this.width != null && this.width.equals(current.width)))
+                    && ((this.color == current.color || this.color != null && this.color.equals(current.color)));
         }
         return false;
     }
