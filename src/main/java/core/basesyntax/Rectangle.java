@@ -32,11 +32,11 @@ public class Rectangle {
             return false;
         }
         Rectangle current = (Rectangle) obj;
-        return (width == null && current.width == null
+        return (width == current.width
                     || (width != null && width.equals(current.width)))
-                && (length == null && current.length == null
+                && (length == current.length
                     || (length != null && length.equals(current.length)))
-                && (color == null && current.color == null
+                && (color == current.color
                     || (color != null && color.equals(current.color)));
     }
 
