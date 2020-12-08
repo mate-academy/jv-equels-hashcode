@@ -31,7 +31,7 @@ public class Rectangle {
         if (rectangle == null) {
             return false;
         }
-        if (rectangle.getClass().equals(Rectangle.class)) {
+        if (!rectangle.getClass().equals(Rectangle.class)) {
             return false;
         }
         Rectangle castedRectangle = (Rectangle) rectangle;
