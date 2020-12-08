@@ -27,12 +27,9 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) obj;
-        return ((color == null && rectangle.color == null)
-                && (length == null && rectangle.length == null)
-                && (width == null && rectangle.width == null))
-                || (width != null && width.equals(rectangle.width)
-                && length != null && length.equals(rectangle.length)
-                && color != null && color.equals(rectangle.color));
+        return (width == rectangle.width || (width != null && width.equals(rectangle.width)))
+                && (length == rectangle.length || (length != null && length.equals(rectangle.length)))
+                && (color == rectangle.color || (color != null && color.equals(rectangle.color)));
     }
 
     public Integer getWidth() {
