@@ -32,15 +32,12 @@ public class Rectangle {
             return false;
         }
         Rectangle castedRectangle = (Rectangle) rectangle;
-        if (!castedRectangle.getClass().toString().equals(Rectangle.class.toString())) {
+        if (!castedRectangle.getClass().equals(Rectangle.class)) {
             return false;
         }
-        return ((this.color == null && castedRectangle.color == null)
-                || this.color.equals(castedRectangle.color))
-                && ((this.width == null && castedRectangle.width == null)
-                || this.width.equals(castedRectangle.width))
-                && ((this.length == null && castedRectangle.length == null)
-                || this.length.equals(castedRectangle.length));
+        return (color == null || color.equals(castedRectangle.color))
+                && (width == null || width.equals(castedRectangle.width))
+                && (length == null || length.equals(castedRectangle.length));
     }
 
     @Override
