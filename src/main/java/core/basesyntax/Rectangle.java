@@ -32,9 +32,9 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) o;
-        return ((width == null && rectangle.width == null) || width.equals(rectangle.width))
-                && ((length == null && rectangle.width == null) || length.equals(rectangle.length))
-                && ((color == null && color == null) || color.equals(rectangle.color));
+        return (width == rectangle.width || width != null && width.equals(rectangle.width))
+                && (length == rectangle.width || length != null && length.equals(rectangle.length))
+                && (color == rectangle.color || color != null && color.equals(rectangle.color));
     }
 
     @Override
