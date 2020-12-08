@@ -27,14 +27,12 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) obj;
-        if ((this.color == null && rectangle.color == null)
-                && (this.length == null && rectangle.length == null)
-                && (this.width == null && rectangle.width == null)) {
-            return true;
-        }
-        return this.width != null && this.width.equals(rectangle.width)
-                && this.length != null && this.length.equals(rectangle.length)
-                && this.color != null && this.color.equals(rectangle.color);
+        return ((color == null && rectangle.color == null)
+                && (length == null && rectangle.length == null)
+                && (width == null && rectangle.width == null))
+                || (width != null && width.equals(rectangle.width)
+                && length != null && length.equals(rectangle.length)
+                && color != null && color.equals(rectangle.color));
     }
 
     public Integer getWidth() {
