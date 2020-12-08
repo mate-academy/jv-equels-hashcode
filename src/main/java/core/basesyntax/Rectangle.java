@@ -28,15 +28,15 @@ public class Rectangle {
         if (this == rectangle) {
             return true;
         }
-        if (rectangle == null || rectangle.getClass() != this.getClass()) {
+        if (rectangle == null || rectangle.getClass() != getClass()) {
             return false;
         }
         Rectangle castedRectangle = (Rectangle) rectangle;
-        return (width == (castedRectangle.width)
+        return (width == castedRectangle.width
                 || (width != null && width.equals(castedRectangle.width)))
-                && (length == (castedRectangle.length)
+                && (length == castedRectangle.length
                 || (length != null && length.equals(castedRectangle.length)))
-                && (color == (castedRectangle.color)
+                && (color == castedRectangle.color
                 || (color != null && color.equals(castedRectangle.color)));
     }
 
