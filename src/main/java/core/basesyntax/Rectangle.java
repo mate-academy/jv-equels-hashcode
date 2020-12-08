@@ -32,22 +32,19 @@ public class Rectangle {
             return false;
         }
         Rectangle rectangle = (Rectangle) obj;
-        return (width == null && rectangle.width == null ? true :
-                width != null ? width.equals(rectangle.width) : false)
+        return (width == rectangle.width || width != null && width.equals(rectangle.width))
                 &&
-                (length == null && rectangle.length == null ? true :
-                        length != null ? length.equals(rectangle.length) : false)
+                (length == rectangle.length || length != null && length.equals(rectangle.length))
                 &&
-                (color == null && rectangle.color == null ? true :
-                        color != null ? color.equals(rectangle.color) : false);
+                (color == rectangle.color || color != null && color.equals(rectangle.color));
     }
 
     @Override
     public int hashCode() {
         int result = 17;
-        result = 31 * result + (this.width != null ? width : 0);
-        result = 31 * result + (this.length != null ? length : 0);
-        result = 31 * result + (this.color != null ? this.color.hashCode() : 0);
+        result = 31 * result + (width != null ? width : 0);
+        result = 31 * result + (length != null ? length : 0);
+        result = 31 * result + (color != null ? color.hashCode() : 0);
         return result;
     }
 }
