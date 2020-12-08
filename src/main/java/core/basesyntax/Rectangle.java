@@ -30,11 +30,9 @@ public class Rectangle {
         if (object == null) {
             return false;
         }
-
         if (this == object) {
             return true;
         }
-
         if (object.getClass().equals(Rectangle.class)) {
             Rectangle figure = (Rectangle) object;
             return Objects.equals(this.width, figure.width)
