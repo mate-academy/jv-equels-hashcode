@@ -35,9 +35,12 @@ public class Rectangle {
             return false;
         }
         Rectangle castedRectangle = (Rectangle) rectangle;
-        return (color == null || color.equals(castedRectangle.color))
-                && (width == null || width.equals(castedRectangle.width))
-                && (length == null || length.equals(castedRectangle.length));
+        return ((color == null && castedRectangle.color == null)
+                || (color != null && color.equals(castedRectangle.color)))
+                && ((width == null && castedRectangle.width == null)
+                || (width != null && width.equals(castedRectangle.width)))
+                && ((length == null && castedRectangle.length == null)
+                || (length != null && length.equals(castedRectangle.length)));
     }
 
     @Override
