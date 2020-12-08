@@ -25,16 +25,15 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object rectangle) {
-        if (rectangle == null){
+        if (rectangle == null) {
             return false;
         }
-        if (rectangle == this){
+        if (rectangle == this) {
             return true;
         }
 
-
-        if (rectangle.getClass().equals(Rectangle.class)){
-            Rectangle rectangleCurrent = (Rectangle) rectangle;
+        if (rectangle.getClass().equals(Rectangle.class)) {
+            Rectangle rectangleCurrent = (Rectangle)rectangle;
             return ((width == rectangleCurrent.width
                     || (width != null && width.equals(rectangleCurrent.width)))
                     && (length == rectangleCurrent.length
