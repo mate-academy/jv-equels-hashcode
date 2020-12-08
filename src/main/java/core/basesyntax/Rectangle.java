@@ -11,6 +11,18 @@ public class Rectangle {
         this.color = color;
     }
 
+    public Integer getWidth() {
+        return width;
+    }
+
+    public Integer getLength() {
+        return length;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
     @Override
     public int hashCode() {
         int result = 13;
@@ -32,11 +44,11 @@ public class Rectangle {
             return false;
         }
         Rectangle current = (Rectangle) rectangle;
-        return (this.width == current.width || this.width != null
-                && this.width.equals(current.width))
-                && (this.length == current.length || this.length != null
-                && this.length.equals(current.length))
-                && (this.color == current.color || this.color != null
-                && this.color.equals(current.color));
+        return (width == current.width || width != null
+                && width.equals(current.width))
+                && (length == current.length || length != null
+                && length.equals(current.length))
+                && (color == current.color || color != null
+                && color.equals(current.color));
     }
 }
