@@ -32,21 +32,26 @@ public class Rectangle {
             return false;
         }
 
-        Rectangle rectangle = (Rectangle)obj;
-        if (color == null) {
-            if (rectangle.color != null) {
-                return false;
+        try {
+            Rectangle rectangle = (Rectangle)obj;
+            if (color == null) {
+                if (rectangle.color != null) {
+                    return false;
+                }
             }
-        }
-        if (color == null && rectangle.color == null && width == null && rectangle.width == null
-                && length == null && rectangle.length == null) {
-            return true;
+            if (obj.getClass().equals(Rectangle.class)) {
+                return ((color == null && rectangle.color == null)
+                        || rectangle.getWidth().equals(getWidth()))
+                        && ((width == null && rectangle.width == null)
+                        || rectangle.getLength().equals(getLength()))
+                        && ((length == null && rectangle.length == null)
+                        || rectangle.getColor().equals(getColor()));
+            }
+
+        } catch (ClassCastException e) {
+            throw new RuntimeException("obj can't be casted to Rectangle", e);
         }
 
-        if (obj.getClass().equals(Rectangle.class)) {
-            return rectangle.getWidth().equals(this.getWidth()) && rectangle.getLength()
-                    .equals(this.getLength()) && rectangle.getColor().equals(this.getColor());
-        }
         return false;
     }
 
