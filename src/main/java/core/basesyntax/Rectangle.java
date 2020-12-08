@@ -25,22 +25,21 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object obj) {
-
         if (this == obj) {
             return true;
         }
-        if (obj == null || this.getClass() != obj.getClass()) {
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
         Rectangle rectangle = (Rectangle) obj;
-        return (this.width == null && rectangle.width == null ? true :
-                this.width != null ? this.width.equals(rectangle.width) : false)
+        return (width == null && rectangle.width == null ? true :
+                width != null ? width.equals(rectangle.width) : false)
                 &&
-                (this.length == null && rectangle.length == null ? true :
-                        this.length != null ? this.length.equals(rectangle.length) : false)
+                (length == null && rectangle.length == null ? true :
+                        length != null ? length.equals(rectangle.length) : false)
                 &&
-                (this.color == null && rectangle.color == null ? true :
-                        this.color != null ? this.color.equals(rectangle.color) : false);
+                (color == null && rectangle.color == null ? true :
+                        color != null ? color.equals(rectangle.color) : false);
     }
 
     @Override
