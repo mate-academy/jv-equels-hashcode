@@ -35,11 +35,11 @@ public class Rectangle {
             return false;
         }
         Rectangle castedRectangle = (Rectangle) rectangle;
-        return ((color == null && castedRectangle.color == null)
+        return (color == castedRectangle.color
                 || (color != null && color.equals(castedRectangle.color)))
-                && ((width == null && castedRectangle.width == null)
+                && (width == castedRectangle.width
                 || (width != null && width.equals(castedRectangle.width)))
-                && ((length == null && castedRectangle.length == null)
+                && (length == castedRectangle.length
                 || (length != null && length.equals(castedRectangle.length)));
     }
 
