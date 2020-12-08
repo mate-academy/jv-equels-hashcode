@@ -25,7 +25,6 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object rectangle) {
-        Rectangle current = (Rectangle) rectangle;
         if (this == rectangle) {
             return true;
         }
@@ -33,12 +32,10 @@ public class Rectangle {
             return false;
         }
         if (rectangle.getClass().equals(Rectangle.class)) {
-            return (width == null && current.width == null
-                    || width.equals(current.width))
-                    && (length == null && current.length == null
-                    || length.equals(current.length))
-                    && (color == null && current.color == null
-                    || color.equals(current.color));
+            Rectangle current = (Rectangle) rectangle;
+            return (width == current.width || width != null && width.equals(current.width))
+                    && (length == current.length || length != null && length.equals(current.length))
+                    && (color == current.color || color != null && color.equals(current.color));
         }
         return false;
     }
