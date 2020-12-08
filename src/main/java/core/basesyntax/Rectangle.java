@@ -36,14 +36,14 @@ public class Rectangle {
             return false;
         }
 
-        if(rectangle.getClass().equals(Rectangle.class)) {
+        if (rectangle.getClass().equals(Rectangle.class)) {
             return colorCheck(current) && lengthCheck(current) && widthCheck(current);
         }
 
         return false;
     }
 
-    private boolean colorCheck (Rectangle current) {
+    private boolean colorCheck(Rectangle current) {
         if (current.color == null) {
             if (current.color == this.color) {
                 return true;
@@ -56,7 +56,7 @@ public class Rectangle {
         return false;
     }
 
-    private boolean lengthCheck (Rectangle current) {
+    private boolean lengthCheck(Rectangle current) {
         if (current.length == null) {
             if (current.length == this.length) {
                 return true;
@@ -69,7 +69,7 @@ public class Rectangle {
         return false;
     }
 
-    private boolean widthCheck (Rectangle current) {
+    private boolean widthCheck(Rectangle current) {
         if (current.width == null) {
             if (current.width == this.width) {
                 return true;
