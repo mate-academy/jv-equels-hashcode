@@ -32,12 +32,12 @@ public class Rectangle {
         }
         if (rectangle.getClass().equals(Rectangle.class)) {
             Rectangle compareRectangle = (Rectangle) rectangle;
-            return (this.width == compareRectangle.getWidth()
-                    || this.width.equals(compareRectangle.getWidth()))
-                    && (this.length == compareRectangle.getLength()
-                    || this.length.equals(compareRectangle.getLength()))
-                    && (this.color == compareRectangle.getColor()
-                    || this.color.equals(compareRectangle.getColor()));
+            return (width == compareRectangle.getWidth()
+                    || width.equals(compareRectangle.getWidth()))
+                    && (length == compareRectangle.getLength()
+                    || length.equals(compareRectangle.getLength()))
+                    && (color == compareRectangle.getColor()
+                    || color.equals(compareRectangle.getColor()));
         }
         return false;
     }
@@ -45,9 +45,9 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int hashCode = 17;
-        hashCode *= 31 + (this.length == null ? 0 : this.length);
-        hashCode *= 31 + (this.color == null ? 0 : this.color.length());
-        hashCode *= 31 + (this.width == null ? 0 : this.width);
+        hashCode *= 31 + (length == null ? 0 : length);
+        hashCode *= 31 + (color == null ? 0 : color.hashCode());
+        hashCode *= 31 + (width == null ? 0 : width);
         return hashCode;
     }
 }
