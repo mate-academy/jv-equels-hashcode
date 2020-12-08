@@ -34,11 +34,11 @@ public class Rectangle {
         if ((object.getClass().equals(Rectangle.class))) {
             Rectangle rectangle = (Rectangle) object;
             return (rectangle.length == null && length == null
-                    || length.compareTo(rectangle.length) == 0)
+                    || length.equals(rectangle.length))
                     && (rectangle.color == null && color == null
                     || color.equals(rectangle.color))
                     && (rectangle.width == null && width == null
-                    || width.compareTo(rectangle.width) == 0);
+                    || width.equals(rectangle.width));
         }
         return false;
     }
