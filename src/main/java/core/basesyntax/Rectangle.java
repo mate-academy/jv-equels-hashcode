@@ -32,26 +32,12 @@ public class Rectangle {
             return false;
         }
         if (obj.getClass().equals(Rectangle.class)) {
-            Rectangle current = (Rectangle) obj;
-            return compareField(this.width, current.width)
-                    && compareField(this.length, current.length)
-                    && compareField(this.color, current.color);
+            Rectangle curr = (Rectangle) obj;
+            return ((width == curr.width) || (width != null && width.equals(curr.width)))
+                    && ((length == curr.length) || (length != null && length.equals(curr.length)))
+                    && ((color == curr.color) || (color != null && color.equals(curr.color)));
         }
         return false;
-    }
-
-    private boolean compareField(Integer first, Integer second) {
-        if (first == null && second != null || first != null && second == null) {
-            return false;
-        }
-        return first == null || first.equals(second);
-    }
-
-    private boolean compareField(String first, String second) {
-        if (first == null && second != null || first != null && second == null) {
-            return false;
-        }
-        return first == null || first.equals(second);
     }
 
     @Override
