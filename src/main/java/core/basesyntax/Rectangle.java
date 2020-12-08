@@ -40,7 +40,7 @@ public class Rectangle {
                     && (length == current.length
                     || (length != null && length.equals(current.length)))
                     && (color == current.color
-                    || (color != null && current.equals(current.color)));
+                    || (color != null && color.equals(current.color)));
         }
 
         return false;
@@ -48,7 +48,7 @@ public class Rectangle {
 
     @Override
     public int hashCode() {
-        int individualHashCode = 117;
+        int individualHashCode = 113;
         individualHashCode = 47 * individualHashCode + (width == null ? 0 : width.hashCode());
         individualHashCode = 47 * individualHashCode + (length == null ? 0 : length.hashCode());
         individualHashCode = 47 * individualHashCode + (color == null ? 0 : color.hashCode());
