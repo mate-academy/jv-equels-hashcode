@@ -33,12 +33,12 @@ public class Rectangle {
         }
         if (shape.getClass().equals(Rectangle.class)) {
             Rectangle current = (Rectangle) shape;
-            return ((this.length == current.length
-                    || this.length != null && this.length.equals(current.length)))
-                    && ((this.width == current.width
-                    || this.width != null && this.width.equals(current.width)))
-                    && ((this.color == current.color
-                    || this.color != null && this.color.equals(current.color)));
+            return ((length == current.length
+                    || length != null && length.equals(current.length)))
+                    && ((width == current.width
+                    || width != null && width.equals(current.width)))
+                    && ((color == current.color
+                    || color != null && color.equals(current.color)));
         }
         return false;
     }
