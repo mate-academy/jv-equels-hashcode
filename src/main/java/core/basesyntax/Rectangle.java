@@ -33,9 +33,9 @@ public class Rectangle {
         }
         if (rectangle.getClass().equals(Rectangle.class)) {
             Rectangle firstRectangle = (Rectangle) rectangle;
-            return ((this.width == null) || this.width.equals(firstRectangle.width))
-                    && (this.length == null || this.length.equals(firstRectangle.length))
-                    && (this.color == null || this.color.equals(firstRectangle.color));
+            return ((width == null) || width.equals(firstRectangle.width))
+                    && (length == null || length.equals(firstRectangle.length))
+                    && (color == null || color.equals(firstRectangle.color));
         }
         return false;
     }
