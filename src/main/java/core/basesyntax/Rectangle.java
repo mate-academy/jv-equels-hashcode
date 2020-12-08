@@ -32,9 +32,9 @@ public class Rectangle {
             return false;
         }
         Rectangle current = (Rectangle) obj;
-        return (this.width == null || this.width.equals(current.width))
-                && (this.length == null || this.length.equals(current.length))
-                && (this.color == null || this.color.equals(current.color));
+        return (this.width == null && current.width == null || this.width.equals(current.width))
+                && (this.length == null && current.length == null || this.length.equals(current.length))
+                && (this.color == null && current.color == null || this.color.equals(current.color));
     }
 
     @Override
