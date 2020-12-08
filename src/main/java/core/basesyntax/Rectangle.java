@@ -42,9 +42,12 @@ public class Rectangle {
         }
         if (rectangle.getClass().equals(Rectangle.class)) {
             Rectangle current = (Rectangle) rectangle;
-            return (width == current.getWidth() || width.equals(current.getWidth()))
-                    && (length == current.getLength() || length.equals(current.getLength()))
-                    && (color == current.getColor() || color.equals(current.getColor()));
+            return (width == current.getWidth()
+                    || (width != null && width.equals(current.getWidth())))
+                    && (length == current.getLength()
+                    || (length != null && length.equals(current.getLength())))
+                    && (color == current.getColor()
+                    || (color != null && color.equals(current.getColor())));
         }
         return false;
     }
