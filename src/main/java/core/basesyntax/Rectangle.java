@@ -43,11 +43,11 @@ public class Rectangle {
         if (rectangle.getClass().equals(Rectangle.class)) {
             Rectangle current = (Rectangle) rectangle;
             return ((color == null && current.color == null)
-                    || (color != null && color.equals(current.color))
+                    || (color != null && color.equals(current.color)))
                     && ((length == null && current.length == null)
-                    || (length != null && length.equals(current.length))
+                    || (length != null && length.equals(current.length)))
                     && ((width == null && current.width == null)
-                    || (width != null && width.equals(current.width)))));
+                    || (width != null && width.equals(current.width)));
         }
         return false;
     }
