@@ -40,13 +40,11 @@ public class Rectangle {
         if (rectangle == null) {
             return false;
         }
-        if (this.color == null && this.width == null && this.length == null) {
-            return true;
-        }
         if (rectangle.getClass().equals(Rectangle.class)) {
             Rectangle current = (Rectangle) rectangle;
-            return this.color.equals(current.color) && this.length.equals(current.length)
-                    && this.width.equals(current.width);
+            return (color == current.color && length == current.length
+                    && width == current.width) || (color.equals(current.color)
+                    && length.equals(current.length) && width.equals(current.width));
         }
         return false;
     }
