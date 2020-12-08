@@ -36,13 +36,13 @@ public class Rectangle {
             Rectangle rectangle = (Rectangle)obj;
             return ((color == null && rectangle.color == null)
                         || (color != null && rectangle.color != null)
-                        && rectangle.getWidth().equals(getWidth()))
+                        && rectangle.getColor().equals(getColor()))
                         && ((width == null && rectangle.width == null)
                         || (width != null && rectangle.width != null)
-                        && rectangle.getLength().equals(getLength()))
+                        && rectangle.getWidth().equals(getWidth()))
                         && ((length == null && rectangle.length == null)
                         || (length != null && rectangle.length != null)
-                        && rectangle.getColor().equals(getColor()));
+                        && rectangle.getLength().equals(getLength()));
         }
         return false;
     }
