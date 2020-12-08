@@ -31,10 +31,10 @@ public class Rectangle {
         if (rectangle == null) {
             return false;
         }
-        Rectangle castedRectangle = (Rectangle) rectangle;
-        if (!castedRectangle.getClass().equals(Rectangle.class)) {
+        if (rectangle.getClass().equals(Rectangle.class)) {
             return false;
         }
+        Rectangle castedRectangle = (Rectangle) rectangle;
         return (color == null || color.equals(castedRectangle.color))
                 && (width == null || width.equals(castedRectangle.width))
                 && (length == null || length.equals(castedRectangle.length));
