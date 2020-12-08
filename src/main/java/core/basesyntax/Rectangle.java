@@ -33,9 +33,12 @@ public class Rectangle {
         }
         if (rectangle.getClass().equals(Rectangle.class)) {
             Rectangle firstRectangle = (Rectangle) rectangle;
-            return ((width == null) || width.equals(firstRectangle.width))
-                    && (length == null || length.equals(firstRectangle.length))
-                    && (color == null || color.equals(firstRectangle.color));
+            return ((width == null && firstRectangle.width == null)
+                    || width.equals(firstRectangle.width))
+                    && ((length == null && firstRectangle.length == null)
+                    || length.equals(firstRectangle.length))
+                    && ((color == null && firstRectangle.color == null)
+                    || color.equals(firstRectangle.color));
         }
         return false;
     }
@@ -43,11 +46,9 @@ public class Rectangle {
     @Override
     public int hashCode() {
         int result = 11;
-
         result = result + (width == null ? 0 : width);
         result = result + (length == null ? 0 : length);
         result = result + (color == null ? 0 : color.hashCode());
-
         return result;
     }
 }
