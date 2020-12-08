@@ -32,12 +32,12 @@ public class Rectangle {
         }
         if (rectangle.getClass().equals(Rectangle.class)) {
             Rectangle compareRectangle = (Rectangle) rectangle;
-            return ((width == compareRectangle.width)
+            return (width == compareRectangle.width
                     || (width != null && width.equals(compareRectangle.width)))
-                    && (length == compareRectangle.length)
-                    || (length != null && length.equals(compareRectangle.getLength()))
-                    && (color == compareRectangle.getColor()
-                    || (color != null && color.equals(compareRectangle.getColor())));
+                    && (length == compareRectangle.length
+                    || (length != null && length.equals(compareRectangle.length)))
+                    && (color == compareRectangle.color
+                    || (color != null && color.equals(compareRectangle.color)));
         }
         return false;
     }
