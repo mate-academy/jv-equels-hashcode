@@ -22,4 +22,33 @@ public class Rectangle {
     public String getColor() {
         return color;
     }
+
+    @Override
+    public boolean equals(Object rectangle) {
+        if (rectangle == this) {
+            return true;
+        }
+        if (rectangle == null) {
+            return false;
+        }
+        if (rectangle.getClass().equals(Rectangle.class)) {
+            Rectangle current = (Rectangle) rectangle;
+            return (width == current.width || width != null
+                    && width.equals(current.width))
+                    && (length == current.length || length != null
+                    && length.equals(current.length))
+                    && (color == current.color || color != null
+                    && color.equals(current.color));
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + (width == null ? 0 : width.hashCode());
+        result = 31 * result + (length == null ? 0 : length.hashCode());
+        result = 31 * result + (color == null ? 0 : color.hashCode());
+        return result;
+    }
 }
