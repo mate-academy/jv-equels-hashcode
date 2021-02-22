@@ -25,10 +25,7 @@ public class Rectangle {
 
     @Override
     public boolean equals(Object rectangle) {
-        if (rectangle == null) {
-            return false;
-        }
-        if (rectangle == this) {
+        if (rectangle != null && rectangle == this) {
             return true;
         }
         if (rectangle.getClass().equals(Rectangle.class)) {
